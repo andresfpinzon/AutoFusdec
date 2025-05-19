@@ -10,5 +10,6 @@ import org.junit.runner.RunWith;
         features = "src/test/resources/features/crear_estudiante.feature",
         glue = {"co.com.AutoFusdec.stepsdefinitions", "co.com.AutoFusdec.utils.hooks"},
         snippets = SnippetType.CAMELCASE)
+
 public class CrearEstudianteRunner {
 }
