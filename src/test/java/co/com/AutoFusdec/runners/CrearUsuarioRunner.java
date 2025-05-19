@@ -7,7 +7,7 @@ import org.junit.runner.RunWith;
 
 @RunWith(CucumberWithSerenity.class)
 @CucumberOptions(
-        features = "src/test/resources/features/autenticacion_facebook.feature",
+        features = "src/test/resources/features/crear_usuario.feature",
         glue = {"co.com.AutoFusdec.stepsdefinitions", "co.com.AutoFusdec.utils.hooks"},
         snippets = SnippetType.CAMELCASE)
 
