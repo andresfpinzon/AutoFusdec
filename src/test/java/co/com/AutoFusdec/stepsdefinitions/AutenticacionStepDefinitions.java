@@ -1,6 +1,6 @@
 package co.com.AutoFusdec.stepsdefinitions;
 
-import co.com.AutoFusdec.tasks.AbrirPagina;
+import co.com.AutoFusdec.tasks.AbrirPaginaFusdec;
 import cucumber.api.DataTable;
 import cucumber.api.java.es.Cuando;
 import cucumber.api.java.es.Dado;
@@ -10,9 +10,9 @@ import static net.serenitybdd.screenplay.actors.OnStage.theActorInTheSpotlight;
 
 public class AutenticacionStepDefinitions {
 
-    @Dado("^que el usuario se encuentra en la pagina de inicio de sesion de Facebook$")
+    @Dado("^que el usuario se encuentra en la pagina de inicio de sesion de Fusdec$")
     public void queElUsuarioSeEncuentraEnLaPaginaDeInicioDeSesionDeFacebook() {
-        theActorInTheSpotlight().wasAbleTo(AbrirPagina.lapagina());
+        theActorInTheSpotlight().wasAbleTo(AbrirPaginaFusdec.laPagina());
 
     }
 
