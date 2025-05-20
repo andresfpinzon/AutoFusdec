@@ -1,7 +1,7 @@
 #language:es
   #author:JulianRivera
 
-Funcionalidad: Registrar asistencia de estudiantes
+Característica: Registrar asistencia de estudiantes
 Como usuario con rol "INSTRUCTOR"
 Quiero registrar la asistencia de un estudiante desde la página de gestión de asistencias
 Para confirmar que el estudiante ha asistido a clase
