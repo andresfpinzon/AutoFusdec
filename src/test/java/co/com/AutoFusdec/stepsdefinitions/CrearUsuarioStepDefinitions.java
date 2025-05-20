@@ -14,8 +14,8 @@ public class CrearUsuarioStepDefinitions {
 
     }
 
-    @Cuando("^este en la pagina de usuarios diligenciar correctamente el formulario:$")
-    public void esteEnLaPaginaDeUsuariosDiligenciarCorrectamenteElFormulario(DataTable arg1) {
+    @Cuando("^este en la pagina de usuarios diligenciar correctamente el formulario y dar clic a crear usuario:$")
+    public void esteEnLaPaginaDeUsuariosDiligenciarCorrectamenteElFormularioYDarClicACrearUsuario(DataTable arg1) {
 
     }
 

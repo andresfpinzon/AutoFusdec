@@ -12,8 +12,8 @@ public class CrearEstudianteStepDefinitions {
 
     }
 
-    @Cuando("^este en la pagina de estudiantes diligendiar correctamente el formulario:$")
-    public void esteEnLaPaginaDeEstudiantesDiligendiarCorrectamenteElFormulario(DataTable arg1) {
+    @Cuando("^este en la pagina de estudiantes diligendiar correctamente el formulario y dar clic a crear estudiante$")
+    public void esteEnLaPaginaDeEstudiantesDiligendiarCorrectamenteElFormularioYDarClicACrearEstudiante(DataTable arg1) {
 
     }
 
