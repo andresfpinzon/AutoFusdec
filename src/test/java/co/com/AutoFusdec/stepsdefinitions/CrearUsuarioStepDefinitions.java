@@ -9,10 +9,10 @@ import static net.serenitybdd.screenplay.actors.OnStage.theActorInTheSpotlight;
 
 public class CrearUsuarioStepDefinitions {
 
-    @Dado("^que el usuario se encuentra autenticado$")
+  /*  @Dado("^que el usuario se encuentra autenticado$")
     public void queElUsuarioSeEncuentraAutenticado() {
 
-    }
+    }*/
 
     @Cuando("^este en la pagina de usuarios diligenciar correctamente el formulario y dar clic a crear usuario:$")
     public void esteEnLaPaginaDeUsuariosDiligenciarCorrectamenteElFormularioYDarClicACrearUsuario(DataTable arg1) {

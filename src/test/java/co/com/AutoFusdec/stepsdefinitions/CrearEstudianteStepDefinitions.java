@@ -7,10 +7,10 @@ import cucumber.api.java.es.Entonces;
 
 public class CrearEstudianteStepDefinitions {
 
-    @Dado("^que el usuario se encuentra autenticado$")
+/*    @Dado("^que el usuario se encuentra autenticado$")
     public void queElUsuarioSeEncuentraAutenticado() {
 
-    }
+    }*/
 
     @Cuando("^este en la pagina de estudiantes diligendiar correctamente el formulario y dar clic a crear estudiante$")
     public void esteEnLaPaginaDeEstudiantesDiligendiarCorrectamenteElFormularioYDarClicACrearEstudiante(DataTable arg1) {
