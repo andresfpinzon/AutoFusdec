@@ -8,7 +8,7 @@ Característica: Crear un estudiante en la página de gestión de estudiantes de
   Antecedentes:
     Dado que el usuario se encuentra en la pagina de inicio de sesion de Fusdec
     Cuando ingrese las credenciales correctas (usuario y contrasena)
-      | usuarios         | clave                |
+      | correo           | password             |
       | Fusdec@gmail.com | C0ntras3naFusd3cCE   |
 
   @crearestudiante
@@ -19,4 +19,4 @@ Característica: Crear un estudiante en la página de gestión de estudiantes de
     Entonces se debe verificar que el estudiante se cree correctamente y se agregue a la lista de estudiantes.
     Ejemplos:
       | numero_documento | nombre | apellido | tipo_de_documento | genero    | unidad | colegio | edicion | grado |
-      | 1030666555       | andres | pinzon   | c.c                | masculino | 1      | 2       | 3       | 9°   |
+      | 1030666555       | andres | pinzon   | C.C               | Masculino | 1      | 1       | 1       | 8°   |
