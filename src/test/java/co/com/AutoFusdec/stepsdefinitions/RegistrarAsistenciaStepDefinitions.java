@@ -2,6 +2,7 @@ package co.com.AutoFusdec.stepsdefinitions;
 
 
 import co.com.AutoFusdec.models.autenticacion.AutenticacionModel;
+import co.com.AutoFusdec.questions.registrarAsistencia.ValidacionRegistroAsistencia;
 import co.com.AutoFusdec.tasks.autenticacion.AutenticacionTask;
 import co.com.AutoFusdec.tasks.registrarAsistencia.RegistrarAsistenciaTask;
 import cucumber.api.DataTable;
@@ -12,6 +13,8 @@ import cucumber.api.java.es.Entonces;
 import java.util.List;
 
 import static net.serenitybdd.screenplay.actors.OnStage.theActorInTheSpotlight;
+import static net.serenitybdd.screenplay.GivenWhenThen.seeThat;
+
 public class RegistrarAsistenciaStepDefinitions {
     @Cuando("^ingrese las credenciales correctas \\(usuario y contrasena\\)$")
     public void ingreseLasCredencialesCorrectasUsuarioYContrasena(List<AutenticacionModel> credeciales) {
@@ -26,6 +29,6 @@ public class RegistrarAsistenciaStepDefinitions {
 
     @Entonces("^marco el checkbox de asistencia del estudiante guardo los cambios debo ver un mensaje de confirmación \"Asistencia registrada correctamente$")
     public void marcoElCheckboxDeAsistenciaDelEstudianteGuardoLosCambiosDeboVerUnMensajeDeConfirmaciónAsistenciaRegistradaCorrectamente() {
-
+        theActorInTheSpotlight().should(seeThat(ValidacionRegistroAsistencia.validacionRegistroAsistencia()));
     }
 }
