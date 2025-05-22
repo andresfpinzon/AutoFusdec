@@ -3,6 +3,7 @@ package co.com.AutoFusdec.stepsdefinitions;
 
 import co.com.AutoFusdec.models.autenticacion.AutenticacionModel;
 import co.com.AutoFusdec.tasks.autenticacion.AutenticacionTask;
+import co.com.AutoFusdec.tasks.registrarAsistencia.RegistrarAsistenciaTask;
 import cucumber.api.DataTable;
 import cucumber.api.java.es.Cuando;
 import cucumber.api.java.es.Dado;
@@ -18,9 +19,9 @@ public class RegistrarAsistenciaStepDefinitions {
     }
 
 
-    @Cuando("^estoy en la página de gestión de asistencias busco al estudiante con número de documento$")
-    public void estoyEnLaPáginaDeGestiónDeAsistenciasBuscoAlEstudianteConNúmeroDeDocumento(DataTable arg1) {
-
+    @Cuando("^estoy en la página de gestión de asistencias busco al estudiante con número de documento \"([^\"]*)\"$")
+    public void estoyEnLaPáginaDeGestiónDeAsistenciasBuscoAlEstudianteConNúmeroDeDocumento(String documento) {
+        theActorInTheSpotlight().attemptsTo(RegistrarAsistenciaTask.conDocumento(documento));
     }
 
     @Entonces("^marco el checkbox de asistencia del estudiante guardo los cambios debo ver un mensaje de confirmación \"Asistencia registrada correctamente$")
