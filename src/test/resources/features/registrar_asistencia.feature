@@ -8,7 +8,7 @@ Para confirmar que el estudiante ha asistido a clase
 
   Antecedentes:
     Dado que el usuario se encuentra en la pagina de inicio de sesion de Fusdec
-    Cuando ingrese las credenciales correctas (usuario y contrasena)
+    Cuando ingrese las credenciales correctas (correo y contrasena)
       | correo           | password             |
       | Fusdec@gmail.com | C0ntras3naFusd3cCE   |
 
