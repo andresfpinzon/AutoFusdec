@@ -44,6 +44,7 @@ public class RegistrarAsistenciaTask implements Task {
                     Click.on(CHECKBOX_ASISTENCIA),
                     Click.on(BTN_GUARDAR_ASISTENCIA)
             );
+            Thread.sleep(3000);
 
         } catch (InterruptedException e) {
             throw new RuntimeException("Error al realizar las acciones de registro de asistencia", e);
