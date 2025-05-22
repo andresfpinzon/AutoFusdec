@@ -16,10 +16,7 @@ import static net.serenitybdd.screenplay.actors.OnStage.theActorInTheSpotlight;
 import static net.serenitybdd.screenplay.GivenWhenThen.seeThat;
 
 public class RegistrarAsistenciaStepDefinitions {
-    @Cuando("^ingrese las credenciales correctas \\(usuario y contrasena\\)$")
-    public void ingreseLasCredencialesCorrectasUsuarioYContrasena(List<AutenticacionModel> credeciales) {
-        theActorInTheSpotlight().attemptsTo(AutenticacionTask.interaction(credeciales));
-    }
+
 
 
     @Cuando("^estoy en la página de gestión de asistencias busco al estudiante con número de documento \"([^\"]*)\"$")
