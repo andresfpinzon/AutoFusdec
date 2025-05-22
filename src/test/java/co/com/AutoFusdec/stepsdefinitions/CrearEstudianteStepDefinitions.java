@@ -15,15 +15,6 @@ import java.util.List;
 import static net.serenitybdd.screenplay.actors.OnStage.theActorInTheSpotlight;
 
 public class CrearEstudianteStepDefinitions {
-    @Dado("^que el usuario se encuentra en la pagina de inicio de sesion de Fusdec$")
-    public void queElUsuarioSeEncuentraEnLaPaginaDeInicioDeSesionDeFusdec() {
-        theActorInTheSpotlight().wasAbleTo(AbrirPaginaFusdec.laPagina());
-    }
-
-    @Cuando("^ingrese las credenciales correctas \\(usuario y contrasena\\)$")
-    public void ingreseLasCredencialesCorrectasUsuarioYContrasena(List<AutenticacionModel> credenciales) {
-        theActorInTheSpotlight().attemptsTo(AutenticacionTask.interaction(credenciales));
-    }
 
     @Cuando("^este en la pagina de estudiantes diligendiar correctamente el formulario y dar clic a crear estudiante$")
     public void esteEnLaPaginaDeEstudiantesDiligendiarCorrectamenteElFormularioYDarClicACrearEstudiante(List<FormularioEstudiante> datosEstudiante) {

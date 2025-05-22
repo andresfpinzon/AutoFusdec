@@ -14,7 +14,7 @@ import static org.hamcrest.MatcherAssert.assertThat;
 import static org.hamcrest.Matchers.is;
 
 public class AutenticacionStepDefinitions {
-    /*
+
     @Dado("^que el usuario se encuentra en la pagina de inicio de sesion de Fusdec$")
     public void queElUsuarioSeEncuentraEnLaPaginaDeInicioDeSesionDeFusdec() {
         theActorInTheSpotlight().wasAbleTo(AbrirPaginaFusdec.laPagina());
@@ -28,5 +28,5 @@ public class AutenticacionStepDefinitions {
     @Entonces("^se debe verificar que el usuario haya sido autenticado correctamente y redirigido a la pagina de inicio de Fusdec$")
     public void seDebeVerificarQueElUsuarioHayaSidoAutenticadoCorrectamenteYRedirigidoALaPaginaDeInicioDeFusdec() {
 
-    }*/
+    }
 }

@@ -5,9 +5,10 @@ Característica: Crear un estudiante en la página de gestión de estudiantes de
   Como usuario con rol secretario
   Quiero registrar un nuevo estudiante desde la página de gestión de estudiantes
   Para poder visualizarlo correctamente en la lista de estudiantes.
+
   Antecedentes:
     Dado que el usuario se encuentra en la pagina de inicio de sesion de Fusdec
-    Cuando ingrese las credenciales correctas (usuario y contrasena)
+    Cuando ingrese las credenciales correctas (correo y contrasena)
       | correo           | password             |
       | Fusdec@gmail.com | C0ntras3naFusd3cCE   |
 
