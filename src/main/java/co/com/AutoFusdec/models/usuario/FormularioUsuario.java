@@ -2,14 +2,14 @@ package co.com.AutoFusdec.models.usuario;
 
 public class FormularioUsuario {
 
-    private String documento;
+    private String numeroDocumento;
 
-    public String getDocumento() {
-        return documento;
+    public String getNumeroDocumento() {
+        return numeroDocumento;
     }
 
-    public void setDocumento(String documento) {
-        this.documento = documento;
+    public void setNumeroDocumento(String numeroDocumento) {
+        this.numeroDocumento = numeroDocumento;
     }
 
     private String nombre;
@@ -52,8 +52,8 @@ public class FormularioUsuario {
         this.password = password;
     }
 
-    public FormularioUsuario(String documento, String nombre, String apellido, String correo, String password) {
-        this.documento = documento;
+    public FormularioUsuario(String numeroDocumento, String nombre, String apellido, String correo, String password) {
+        this.numeroDocumento = numeroDocumento;
         this.nombre = nombre;
         this.apellido = apellido;
         this.correo = correo;
