@@ -1,7 +1,6 @@
 package co.com.AutoFusdec.tasks.estudiante;
 
 import co.com.AutoFusdec.models.estudiante.FormularioEstudiante;
-import co.com.AutoFusdec.userinterface.estudiante.PgEstudiante;
 import net.serenitybdd.core.steps.Instrumented;
 import net.serenitybdd.screenplay.Actor;
 import net.serenitybdd.screenplay.Task;
@@ -11,7 +10,6 @@ import net.serenitybdd.screenplay.waits.WaitUntil;
 import java.util.List;
 
 import static co.com.AutoFusdec.userinterface.estudiante.CrearEstudiante.*;
-import static net.serenitybdd.screenplay.matchers.WebElementStateMatchers.isClickable;
 import static net.serenitybdd.screenplay.matchers.WebElementStateMatchers.isVisible;
 
 public class CreacionEstudiante implements Task {
@@ -30,11 +28,11 @@ public class CreacionEstudiante implements Task {
     public <T extends Actor> void performAs(T actor) {
         FormularioEstudiante estudiante = datosEstudiante.get(0);
         actor.attemptsTo(
-                //Open.browserOn().the(PgEstudiante.class),
                 Click.on(MENU_DRAWER),
                 Click.on(MENU_DRAWER_OPCION),
+                WaitUntil.the(PG_ESTUDIANTES, isVisible()).forNoMoreThan(10).seconds(),
+                PaginacionInicial.textFrom(PG_ESTUDIANTES),
                 WaitUntil.the(NUMERO_DOCUMENTO, isVisible()).forNoMoreThan(10).seconds(),
-                WaitUntil.the(NUMERO_DOCUMENTO, isClickable()).forNoMoreThan(10).seconds(),
                 Click.on(NUMERO_DOCUMENTO),
                 Enter.theValue(estudiante.getNumero_documento()).into(NUMERO_DOCUMENTO),
                 Click.on(NOMBRE),
