@@ -8,10 +8,10 @@ import cucumber.api.java.es.Entonces;
 
 import static net.serenitybdd.screenplay.actors.OnStage.theActorInTheSpotlight;
 public class RegistrarAsistenciaStepDefinitions {
-    @Dado("^que el usuario se encuentra autenticado$")
+    /*@Dado("^que el usuario se encuentra autenticado$")
     public void queElUsuarioSeEncuentraAutenticado() {
 
-    }
+    }*/
 
 
     @Cuando("^estoy en la página de gestión de asistencias busco al estudiante con número de documento$")

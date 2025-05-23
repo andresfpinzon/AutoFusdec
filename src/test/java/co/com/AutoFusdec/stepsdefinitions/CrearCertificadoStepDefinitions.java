@@ -5,10 +5,10 @@ import cucumber.api.java.es.Dado;
 import cucumber.api.java.es.Entonces;
 
 public class CrearCertificadoStepDefinitions {
-    @Dado("^que el usuario se encuentra autenticado en el sistema$")
+    /*@Dado("^que el usuario se encuentra autenticado en el sistema$")
     public void queElUsuarioSeEncuentraAutenticadoEnElSistema() {
 
-    }
+    }*/
     
     @Cuando("^este en la pagina de certificados y seleccione correctamente todos los campo$")
     public void esteEnLaPaginaDeCertificadosYSeleccioneCorrectamenteTodosLosCampo() {
