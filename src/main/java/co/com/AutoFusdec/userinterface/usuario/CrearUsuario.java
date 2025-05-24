@@ -21,8 +21,13 @@ public class CrearUsuario extends PageObject {
     public static Target INPUT_PASSWORD = Target.the("Ingreso de la contraseña")
             .located(By.xpath("//*[@id=\"password\"]"));
     public static Target BTN_ROL = Target.the("Boton de enviar")
-            .located(By.xpath("//*[@id=\"root\"]/div/div/form/div[6]/div/div/div"));
+            .located(By.xpath("//*[@id=\"root\"]/div/div/form/div[6]/div/div"));
+
+    public static Target BTN_ELECCION = Target.the("Boton de enviar")
+            .located(By.xpath("//*[@id=\":rj:\"]/li[1]/span[1]/input"));
     public static Target BTN_CREAR = Target.the("Boton de crear")
             .located(By.xpath("//*[@id=\"root\"]/div/div/form/div[7]/button"));
+    public static Target MENSAJE_EXITO = Target.the("Boton de crear")
+            .located(By.xpath("//div[contains(@class,'MuiAlert-message') and text()='Usuario creado correctamente con sus roles']"));
 
 }

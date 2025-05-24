@@ -1,6 +1,7 @@
 package co.com.AutoFusdec.stepsdefinitions;
 
 import co.com.AutoFusdec.models.usuario.FormularioUsuario;
+import co.com.AutoFusdec.questions.ValidacionCrearUsuario;
 import co.com.AutoFusdec.tasks.AbrirPaginaFusdec;
 import co.com.AutoFusdec.tasks.usuario.CreacionUsuario;
 import cucumber.api.DataTable;
@@ -11,6 +12,7 @@ import cucumber.api.java.es.Entonces;
 
 import java.util.List;
 
+import static net.serenitybdd.screenplay.GivenWhenThen.seeThat;
 import static net.serenitybdd.screenplay.actors.OnStage.theActorInTheSpotlight;
 
 public class CrearUsuarioStepDefinitions {
@@ -25,7 +27,7 @@ public class CrearUsuarioStepDefinitions {
 
     @Entonces("^se debe verificar que el usuario se cree correctamente y se agregue a la lista de usuarios\\.$")
     public void seDebeVerificarQueElUsuarioSeCreeCorrectamenteYSeAgregueALaListaDeUsuarios() {
-        throw new PendingException();
+        theActorInTheSpotlight().should(seeThat(ValidacionCrearUsuario.validacionCrearUsuario()));
     }
 
 }

@@ -4,10 +4,7 @@ import co.com.AutoFusdec.models.usuario.FormularioUsuario;
 import net.serenitybdd.core.steps.Instrumented;
 import net.serenitybdd.screenplay.Actor;
 import net.serenitybdd.screenplay.Task;
-import net.serenitybdd.screenplay.actions.Click;
-import net.serenitybdd.screenplay.actions.Enter;
-import net.serenitybdd.screenplay.actions.Scroll;
-import net.serenitybdd.screenplay.actions.ScrollTo;
+import net.serenitybdd.screenplay.actions.*;
 import net.serenitybdd.screenplay.waits.WaitUntil;
 
 import java.util.List;
@@ -47,6 +44,8 @@ public class CreacionUsuario implements Task {
                 Scroll.to(INPUT_PASSWORD),
                 Enter.theValue(usuario.get(0).getPassword()).into(INPUT_PASSWORD),
                 Click.on(BTN_ROL),
+                Click.on(BTN_ELECCION),
+                DoubleClick.on(BTN_ROL),
                 Click.on(BTN_CREAR)
 
         );
