@@ -7,7 +7,7 @@ import net.serenitybdd.screenplay.targets.Target;
 public class CrearUsuario extends PageObject {
 
     public static Target BTN_MENU = Target.the("Boton de menu desplegable")
-            .located(By.xpath("//*[@id=\"root\"]/header/div/button"));
+            .located(By.id("menuButtonLateral"));
     public static Target BTN_USUARIO = Target.the("Boton de usuarios")
             .located(By.xpath("/html/body/div[2]/div[3]/div/ul/li[8]/div[2]/span"));
     public static Target INPUT_DOCUMENTO = Target.the(" Ingreso del numero de documento")

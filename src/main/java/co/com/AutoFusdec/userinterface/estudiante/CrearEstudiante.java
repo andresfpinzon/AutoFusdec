@@ -7,7 +7,7 @@ import org.openqa.selenium.By;
 public class CrearEstudiante extends PageObject {
 
     public static Target MENU_DRAWER = Target.the("Menu Principal")
-            .located(By.xpath("//*[@id=\"root\"]/header/div/button"));
+            .located(By.id("menuButtonLateral"));
     public static Target MENU_DRAWER_OPCION = Target.the("Campo Estudiante")
             .located(By.xpath("/html/body/div[2]/div[3]/div/ul/li[9]"));
     public static Target NUMERO_DOCUMENTO = Target.the("Campo numero de documento")
