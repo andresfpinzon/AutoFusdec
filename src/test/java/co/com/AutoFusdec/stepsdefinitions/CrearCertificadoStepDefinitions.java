@@ -13,11 +13,6 @@ import static net.serenitybdd.screenplay.actors.OnStage.theActorInTheSpotlight;
 
 public class CrearCertificadoStepDefinitions {
 
-    @Dado("^que el usuario se encuentra autenticado en el sistema con los siguientes datos:$")
-    public void queElUsuarioSeEncuentraAutenticadoEnElSistemaConLosSiguientesDatos(){
-        theActorInTheSpotlight().wasAbleTo(AbrirPaginaFusdec.laPagina());
-    }
-
     @Cuando("^este en la pagina de certificados y seleccione correctamente todos los campos:$")
     public void esteEnLaPaginaDeCertificadosYSeleccioneCorrectamenteTodosLosCampos(List<CertificadoModel> certificados){
         theActorInTheSpotlight().attemptsTo(CertificadoTask.interaction(certificados)
