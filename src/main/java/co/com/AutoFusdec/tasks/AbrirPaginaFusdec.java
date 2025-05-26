@@ -18,8 +18,6 @@ public class AbrirPaginaFusdec implements Task{
 
     InicioFusdec inicioFusdec;
 
-
-
     public static AbrirPaginaFusdec laPagina(){
         return instrumented(AbrirPaginaFusdec.class);
     }
