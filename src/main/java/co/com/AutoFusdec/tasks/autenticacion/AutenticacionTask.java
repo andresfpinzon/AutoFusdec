@@ -1,13 +1,12 @@
 package co.com.AutoFusdec.tasks.autenticacion;
 
 import co.com.AutoFusdec.models.autenticacion.AutenticacionModel;
-import cucumber.api.java.bs.A;
 import net.serenitybdd.core.steps.Instrumented;
 import net.serenitybdd.screenplay.Actor;
 import net.serenitybdd.screenplay.Task;
 import net.serenitybdd.screenplay.actions.Click;
 import net.serenitybdd.screenplay.actions.Enter;
-import net.serenitybdd.screenplay.actions.Open;
+
 
 import java.util.List;
 
