@@ -3,7 +3,6 @@ package co.com.AutoFusdec.stepsdefinitions;
 import co.com.AutoFusdec.models.autenticacion.AutenticacionModel;
 import co.com.AutoFusdec.tasks.AbrirPaginaFusdec;
 import co.com.AutoFusdec.tasks.autenticacion.AutenticacionTask;
-import cucumber.api.DataTable;
 import cucumber.api.java.es.Cuando;
 import cucumber.api.java.es.Dado;
 import cucumber.api.java.es.Entonces;
@@ -15,11 +14,11 @@ import static org.hamcrest.MatcherAssert.assertThat;
 import static org.hamcrest.Matchers.is;
 
 public class AutenticacionStepDefinitions {
+
     @Dado("^que el usuario se encuentra en la pagina de inicio de sesion de Fusdec$")
     public void queElUsuarioSeEncuentraEnLaPaginaDeInicioDeSesionDeFusdec() {
         theActorInTheSpotlight().wasAbleTo(AbrirPaginaFusdec.laPagina());
     }
-
 
     @Cuando("^ingrese las credenciales correctas \\(correo y contrasena\\)$")
     public void ingreseLasCredencialesCorrectasCorreoYContrasena(List<AutenticacionModel> credeciales) {
