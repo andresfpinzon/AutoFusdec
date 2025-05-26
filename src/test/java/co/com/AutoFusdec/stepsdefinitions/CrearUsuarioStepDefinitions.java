@@ -1,13 +1,9 @@
 package co.com.AutoFusdec.stepsdefinitions;
 
 import co.com.AutoFusdec.models.usuario.FormularioUsuario;
-import co.com.AutoFusdec.questions.ValidacionCrearUsuario;
-import co.com.AutoFusdec.tasks.AbrirPaginaFusdec;
+import co.com.AutoFusdec.questions.usuario.ValidacionCrearUsuario;
 import co.com.AutoFusdec.tasks.usuario.CreacionUsuario;
-import cucumber.api.DataTable;
-import cucumber.api.PendingException;
 import cucumber.api.java.es.Cuando;
-import cucumber.api.java.es.Dado;
 import cucumber.api.java.es.Entonces;
 
 import java.util.List;

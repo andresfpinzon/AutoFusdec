@@ -10,4 +10,7 @@ public class AutenticacionFusdec extends PageObject {
     //*[@id=":r9:"]
     public static Target INPUT_PASSWORD = Target.the("Ingreso password").located(By.xpath("//*[@id=\"passwordInput\"]"));
     public static Target BTN_INICIOSESION = Target.the("Boton ingreso").located(By.xpath("//*[@id=\"iniciarSesionButton\"]"));
+    public static Target MENU_PRINCIPAL = Target.the("Menu Principal")
+            .located(By.id("menuButtonLateral"));
+
 }
