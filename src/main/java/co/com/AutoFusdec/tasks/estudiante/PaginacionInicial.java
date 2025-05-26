@@ -9,19 +9,19 @@ import static net.serenitybdd.screenplay.Tasks.instrumented;
 
 public class PaginacionInicial implements Task {
 
-    private final Target paginationTarget;
+    private final Target paginaciontarget;
 
-    public PaginacionInicial(Target paginationTarget) {
-        this.paginationTarget = paginationTarget;
+    public PaginacionInicial(Target paginacionTarget) {
+        this.paginaciontarget = paginacionTarget;
     }
 
-    public static PaginacionInicial textFrom(Target paginationTarget) {
+    public static PaginacionInicial textoPaginacion(Target paginationTarget) {
         return instrumented(PaginacionInicial.class, paginationTarget);
     }
 
     @Override
     public <T extends Actor> void performAs(T actor) {
-        String textoInicial = Text.of(paginationTarget).viewedBy(actor).asString().trim();
+        String textoInicial = Text.of(paginaciontarget).viewedBy(actor).asString().trim();
         actor.remember("paginacion_inicial", textoInicial);
     }
 }

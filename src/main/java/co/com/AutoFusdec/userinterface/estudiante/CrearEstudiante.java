@@ -43,7 +43,7 @@ public class CrearEstudiante extends PageObject {
     public static Target BOTON_CREAR = Target.the("Boton crear estudiante")
             .located(By.id("crearEstudianteButton"));
 
-    public static Target PG_ESTUDIANTES = Target.the("Texto paginacion de estudiante")
+    public static Target PAGINACION_ESTUDIANTES = Target.the("Texto paginacion de estudiante")
             .located(By.xpath("//*[@id=\"paginacionEstudiantes\"]/div/p[2]"));
 
 

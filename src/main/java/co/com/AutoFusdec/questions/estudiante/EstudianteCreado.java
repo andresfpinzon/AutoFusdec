@@ -3,15 +3,14 @@ package co.com.AutoFusdec.questions.estudiante;
 import net.serenitybdd.screenplay.Actor;
 import net.serenitybdd.screenplay.Question;
 import net.serenitybdd.screenplay.questions.Text;
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
+import static jxl.biff.FormatRecord.logger;
 
-import static co.com.AutoFusdec.userinterface.estudiante.CrearEstudiante.PG_ESTUDIANTES;
+import static co.com.AutoFusdec.userinterface.estudiante.CrearEstudiante.PAGINACION_ESTUDIANTES;
 
 
 public class EstudianteCreado implements Question<Boolean> {
 
-    private static final Logger logger = LoggerFactory.getLogger(EstudianteCreado.class);
+
 
     public static Question<Boolean> estaCreado() {
         return new EstudianteCreado();
@@ -21,13 +20,14 @@ public class EstudianteCreado implements Question<Boolean> {
     public Boolean answeredBy(Actor actor) {
         try {
             String textoInicial = actor.recall("paginacion_inicial");
-            String textoActual = Text.of(PG_ESTUDIANTES).viewedBy(actor).asString().trim();
+            String textoActual = Text.of(PAGINACION_ESTUDIANTES).viewedBy(actor).asString().trim();
 
             int totalInicial = obtenerTotal(textoInicial);
             int totalActual = obtenerTotal(textoActual);
 
-            logger.info("Total anterior: {}", totalInicial);
-            logger.info("Total actual: {}", totalActual);
+            logger.info("El estudiante se creo correctamente dado que la paginacion en la tabla se modifico" );
+            logger.info("Total registros iniciales: " + totalInicial);
+            logger.info("Total registros actuales: " + totalActual);
 
             return totalActual > totalInicial;
 
@@ -44,7 +44,7 @@ public class EstudianteCreado implements Question<Boolean> {
                 return Integer.parseInt(partes[1].trim());
             }
         } catch (Exception e) {
-            logger.error("No se pudo extraer el total del texto: {}", texto, e);
+            logger.error("No se pudo extraer el total del texto: " + texto, e);
         }
         return -1;
     }

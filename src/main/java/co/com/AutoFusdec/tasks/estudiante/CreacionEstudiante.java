@@ -30,8 +30,8 @@ public class CreacionEstudiante implements Task {
         actor.attemptsTo(
                 Click.on(MENU_DRAWER),
                 Click.on(MENU_DRAWER_OPCION),
-                WaitUntil.the(PG_ESTUDIANTES, isVisible()).forNoMoreThan(10).seconds(),
-                PaginacionInicial.textFrom(PG_ESTUDIANTES),
+                WaitUntil.the(PAGINACION_ESTUDIANTES, isVisible()).forNoMoreThan(10).seconds(),
+                PaginacionInicial.textoPaginacion(PAGINACION_ESTUDIANTES),
                 WaitUntil.the(NUMERO_DOCUMENTO, isVisible()).forNoMoreThan(10).seconds(),
                 Click.on(NUMERO_DOCUMENTO),
                 Enter.theValue(estudiante.getNumero_documento()).into(NUMERO_DOCUMENTO),
