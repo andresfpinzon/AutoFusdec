@@ -16,6 +16,7 @@ public class RegistrarAsistencia extends PageObject {
     public static Target BTN_GUARDAR_ASISTENCIA = Target.the("Guardar asistencia").located(By.id("btnGuardarAsistencia"));
 
     public static Target MENSAJE_REGISTRO_EXITOSO = Target
-            .the("Mensaje de exito del registro de asistencia").located(By.xpath("/div/div/div[2]"));
+            .the("Mensaje de exito del registro de asistencia").located(By.xpath("/html/body/div/div/div/div[2]/div"));
+
 
 }
