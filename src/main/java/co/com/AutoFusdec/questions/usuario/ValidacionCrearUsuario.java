@@ -1,4 +1,4 @@
-package co.com.AutoFusdec.questions;
+package co.com.AutoFusdec.questions.usuario;
 
 import net.serenitybdd.screenplay.Actor;
 import net.serenitybdd.screenplay.Question;
