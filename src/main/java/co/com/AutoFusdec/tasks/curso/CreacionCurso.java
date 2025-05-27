@@ -1,5 +1,6 @@
 package co.com.AutoFusdec.tasks.curso;
 
+import co.com.AutoFusdec.models.curso.FormularioCurso;
 import net.serenitybdd.core.steps.Instrumented;
 import net.serenitybdd.screenplay.Actor;
 import net.serenitybdd.screenplay.Task;
