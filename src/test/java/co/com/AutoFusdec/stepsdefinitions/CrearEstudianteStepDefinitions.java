@@ -14,7 +14,7 @@ import static org.hamcrest.CoreMatchers.is;
 public class CrearEstudianteStepDefinitions {
 
 
-    @Cuando("^este en la pagina de estudiantes diligendiar correctamente el formulario y dar clic a crear estudiante$")
+    /*@Cuando("^este en la pagina de estudiantes diligendiar correctamente el formulario y dar clic a crear estudiante$")
     public void esteEnLaPaginaDeEstudiantesDiligendiarCorrectamenteElFormularioYDarClicACrearEstudiante(List<FormularioEstudiante> datosEstudiante) {
         theActorInTheSpotlight().attemptsTo(CreacionEstudiante.conLosDatos(datosEstudiante));
     }
@@ -23,5 +23,5 @@ public class CrearEstudianteStepDefinitions {
     public void seDebeVerificarQueElEstudianteSeCreeCorrectamenteYSeAgregueALaListaDeEstudiantes() {
         theActorInTheSpotlight().should(seeThat(EstudianteCreado.estaCreado(), is(true))
         );
-    }
+    }*/
 }

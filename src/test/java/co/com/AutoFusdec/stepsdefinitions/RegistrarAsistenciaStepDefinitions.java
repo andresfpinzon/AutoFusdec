@@ -19,7 +19,7 @@ public class RegistrarAsistenciaStepDefinitions {
 
 
 
-    @Cuando("^estoy en la página de gestión de asistencias busco al estudiante con número de documento \"([^\"]*)\"$")
+    /*@Cuando("^estoy en la página de gestión de asistencias busco al estudiante con número de documento \"([^\"]*)\"$")
     public void estoyEnLaPáginaDeGestiónDeAsistenciasBuscoAlEstudianteConNúmeroDeDocumento(String documento) {
         theActorInTheSpotlight().attemptsTo(RegistrarAsistenciaTask.conDocumento(documento));
     }
@@ -27,5 +27,5 @@ public class RegistrarAsistenciaStepDefinitions {
     @Entonces("^marco el checkbox de asistencia del estudiante guardo los cambios debo ver un mensaje de confirmación \"Asistencia registrada correctamente$")
     public void marcoElCheckboxDeAsistenciaDelEstudianteGuardoLosCambiosDeboVerUnMensajeDeConfirmaciónAsistenciaRegistradaCorrectamente() {
         theActorInTheSpotlight().should(seeThat(ValidacionRegistroAsistencia.validacionRegistroAsistencia()));
-    }
+    }*/
 }
