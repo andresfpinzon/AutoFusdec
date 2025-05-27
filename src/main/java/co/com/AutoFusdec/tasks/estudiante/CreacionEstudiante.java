@@ -1,6 +1,7 @@
 package co.com.AutoFusdec.tasks.estudiante;
 
 import co.com.AutoFusdec.models.estudiante.FormularioEstudiante;
+import co.com.AutoFusdec.tasks.usogeneral.SeleccionarOpcionDelMenu;
 import net.serenitybdd.core.steps.Instrumented;
 import net.serenitybdd.screenplay.Actor;
 import net.serenitybdd.screenplay.Task;
@@ -28,32 +29,10 @@ public class CreacionEstudiante implements Task {
     public <T extends Actor> void performAs(T actor) {
         FormularioEstudiante estudiante = datosEstudiante.get(0);
         actor.attemptsTo(
-                Click.on(MENU_DRAWER),
-                Click.on(MENU_DRAWER_OPCION),
+                SeleccionarOpcionDelMenu.conOpcion(MENU_DRAWER_OPCION),
                 WaitUntil.the(PAGINACION_ESTUDIANTES, isVisible()).forNoMoreThan(10).seconds(),
                 PaginacionInicial.textoPaginacion(PAGINACION_ESTUDIANTES),
-                WaitUntil.the(NUMERO_DOCUMENTO, isVisible()).forNoMoreThan(10).seconds(),
-                Click.on(NUMERO_DOCUMENTO),
-                Enter.theValue(estudiante.getNumero_documento()).into(NUMERO_DOCUMENTO),
-                Click.on(NOMBRE),
-                Enter.theValue(estudiante.getNombre()).into(NOMBRE),
-                Click.on(APELLIDO),
-                Enter.theValue(estudiante.getApellido()).into(APELLIDO),
-                Click.on(TIPO_DOCUMENTO),
-                Click.on(OPCION_TIPO_DOCUMENTO),
-                Click.on(GENERO),
-                Click.on(OPCION_GENERO),
-                Scroll.to(GENERO),
-                Click.on(UNIDAD),
-                Click.on(OPCION_UNIDAD),
-                Click.on(COLEGIO),
-                Click.on(OPCION_COLEGIO),
-                Click.on(EDICION),
-                Click.on(OPCION_EDICION),
-                Click.on(GRADO),
-                Click.on(OPCION_GRADO),
-                Scroll.to(GRADO),
-                Click.on(BOTON_CREAR)
+                LlenarFormularioEstudiante.con(datosEstudiante)
         );
     }
 }
