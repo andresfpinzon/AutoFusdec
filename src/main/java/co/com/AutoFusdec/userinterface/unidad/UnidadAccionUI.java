@@ -5,7 +5,7 @@ import net.serenitybdd.screenplay.targets.Target;
 import org.openqa.selenium.By;
 
 public class UnidadAccionUI extends PageObject {
-    public static Target MENU_LATERAL = Target.the("Menu lateral")
+    public static Target MENU_LATERAL_UNIDAD = Target.the("Menu lateral")
             .located(By.id("menuButtonLateral"));
     public static Target BTN_UNIDAD = Target.the("Boton Unidad")
             .located(By.xpath("//*[@id=\"menuLateral\"]/ul/li[3]/div[2]/span"));
