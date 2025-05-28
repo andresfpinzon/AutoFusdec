@@ -3,7 +3,7 @@
 
 Característica: Crear un certificado en la página de gestión de certificados del sistema Fusdec
   Como usuario
-  Quiero registrar un nuevo certificado desde la página de gestión de certificados
+  Quiero registrar una Brigada desde la página de gestión de brigadas
 
   Antecedentes:
     Dado que el usuario se encuentra en la pagina de inicio de sesion de Fusdec
