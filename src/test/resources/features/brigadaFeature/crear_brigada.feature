@@ -1,7 +1,7 @@
 #language:es
   #author: Julian Rivera
 
-Característica: Crear un certificado en la página de gestión de certificados del sistema Fusdec
+Característica: Crear un Brigada en la página de gestión de brigadas del sistema Fusdec
   Como usuario
   Quiero registrar una Brigada desde la página de gestión de brigadas
 

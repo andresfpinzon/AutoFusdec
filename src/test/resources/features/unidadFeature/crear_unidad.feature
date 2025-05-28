@@ -1,7 +1,7 @@
 #language:es
   #author: Julian Rivera
 
-Característica: Crear un certificado en la página de gestión de certificados del sistema Fusdec
+Característica: Crear una Unidad en la página de unidades del sistema Fusdec
   Como usuario
   Quiero registrar una Unidad desde la página de gestion de unidades
 
@@ -14,4 +14,4 @@ Característica: Crear un certificado en la página de gestión de certificados 
     @crearunidad
     Escenario: Crear una nueva unidad
       Cuando estoy en la página de gestión de Unidades dar click en agregar, ingresar "Unidad Doña Juana 1" y confirmar
-      Entonces se debe verificar que el brigada se cree correctamente
+      Entonces se debe verificar que la unidad se cree correctamente
