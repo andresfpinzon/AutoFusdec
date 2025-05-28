@@ -19,4 +19,4 @@ Característica: Crear un certificado en la página de gestión de certificados 
       Entonces se debe verificar que el brigada se cree correctamente
       Ejemplos:
         | nombreBrigada|ubicacionBrigada|
-        |<Brigada Doña Juana>|<https://maps.app.goo.gl/NLQe3jj8YHQHdDUd8>|
+        |Brigada Doña Juana|https://maps.app.goo.gl/NLQe3jj8YHQHdDUd8|
