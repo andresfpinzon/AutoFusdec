@@ -6,9 +6,7 @@ import org.openqa.selenium.By;
 
 public class CrearEstudiante extends PageObject {
 
-    public static Target MENU_DRAWER = Target.the("Menu Principal")
-            .located(By.id("menuButtonLateral"));
-    public static Target MENU_DRAWER_OPCION = Target.the("Campo Estudiante")
+    public static Target MENU_DRAWER_ESTUDIANTE = Target.the("Campo Estudiante")
             .located(By.xpath("/html/body/div[2]/div[3]/div/ul/li[9]"));
     public static Target NUMERO_DOCUMENTO = Target.the("Campo numero de documento")
             .located(By.id("numeroDocumento"));
@@ -40,11 +38,20 @@ public class CrearEstudiante extends PageObject {
             .located(By.id("grado"));
     public static Target OPCION_GRADO = Target.the("Selector grado")
             .located(By.xpath("/html/body/div[2]/div[3]/ul/li[1]"));
-    public static Target BOTON_CREAR = Target.the("Boton crear estudiante")
-            .located(By.id("crearEstudianteButton"));
+    public static Target BTN_ENVIAR_ESTUDIANTE = Target.the("Boton crear estudiante")
+            .located(By.id("enviarEstudianteButton"));
 
     public static Target PAGINACION_ESTUDIANTES = Target.the("Texto paginacion de estudiante")
             .located(By.xpath("//*[@id=\"paginacionEstudiantes\"]/div/p[2]"));
+
+    public static Target BUSQUEDA_ESTUDIANTES = Target.the("Filtro estudiantes")
+            .located(By.id("buscarEstudiantes"));
+
+    public static Target BTN_ELIMINAR_ESTUDIANTE = Target.the("Boton eliminar estudiante")
+            .located(By.id("eliminarEstudianteButton"));
+    public static Target BTN_CONFIRMAR_ELIMINAR_ESTUDIANTE = Target.the("Boton confirmar eliminar estudiante")
+            .located(By.id("confirmarEliminar"));
+
 
 
 }

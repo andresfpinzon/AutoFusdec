@@ -1,11 +1,11 @@
 package co.com.AutoFusdec.tasks.estudiante;
 
 import co.com.AutoFusdec.models.estudiante.FormularioEstudiante;
+import co.com.AutoFusdec.tasks.usogeneral.PaginacionInicial;
 import co.com.AutoFusdec.tasks.usogeneral.SeleccionarOpcionDelMenu;
 import net.serenitybdd.core.steps.Instrumented;
 import net.serenitybdd.screenplay.Actor;
 import net.serenitybdd.screenplay.Task;
-import net.serenitybdd.screenplay.actions.*;
 import net.serenitybdd.screenplay.waits.WaitUntil;
 
 import java.util.List;
@@ -27,11 +27,10 @@ public class CreacionEstudiante implements Task {
 
     @Override
     public <T extends Actor> void performAs(T actor) {
-        FormularioEstudiante estudiante = datosEstudiante.get(0);
         actor.attemptsTo(
-                SeleccionarOpcionDelMenu.conOpcion(MENU_DRAWER_OPCION),
+                SeleccionarOpcionDelMenu.conOpcion(MENU_DRAWER_ESTUDIANTE),
                 WaitUntil.the(PAGINACION_ESTUDIANTES, isVisible()).forNoMoreThan(10).seconds(),
-                PaginacionInicial.textoPaginacion(PAGINACION_ESTUDIANTES),
+                PaginacionInicial.conNombre("paginacion_inicial", PAGINACION_ESTUDIANTES),
                 LlenarFormularioEstudiante.con(datosEstudiante)
         );
     }

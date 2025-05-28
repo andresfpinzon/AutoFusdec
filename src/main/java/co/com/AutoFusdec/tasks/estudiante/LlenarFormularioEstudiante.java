@@ -52,7 +52,7 @@ public class LlenarFormularioEstudiante implements Task {
                 Click.on(GRADO),
                 Click.on(OPCION_GRADO),
                 Scroll.to(GRADO),
-                Click.on(BOTON_CREAR)
+                Click.on(BTN_ENVIAR_ESTUDIANTE)
         );
     }
 }
