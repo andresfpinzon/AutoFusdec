@@ -26,8 +26,8 @@ public class AccionesBrigadaUI extends PageObject {
             .located(By.id("optTarde"));
     public static Target BTN_CONFIRMAR_BRIGADA = Target.the("Confirmar la creación de brigada")
             .located(By.id("btnConfirmarBrigada"));
-    public static Target MENSAJE_EXITOSO = Target
-            .the("Mensaje de exito, de crear brigada").located(By.xpath("//*[@id=\"root\"]/div/div/div[3]/div/div[2]"));
+    public static Target MENSAJE_EXITOSO_BRIGADA = Target
+            .the("Brigada creada correctamente").located(By.xpath("//*[@id=\"root\"]/div/div/div[3]/div/div[2]"));
     public static Target PAGE_BRIGADA = Target.the("Pagina brigada")
             .located(By.xpath("//*[@id=\"root\"]/div/div/div[2]/div[3]"));
     public static Target POPPUP_CREAR = Target.the("Modal de crear brigada")
