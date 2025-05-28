@@ -18,15 +18,17 @@ public class UnidadAccionUI extends PageObject {
     public static Target INPUT_NOMBRE_UNIDAD = Target.the("Ingresar nombre unidad")
             .located(By.id("inpurtNombre"));
     public static Target SELECT_BRIGADA = Target.the("Select para una brigada")
-            .located(By.id("brigada-select"));
+            .located(By.xpath("//*[@id=\"brigada-select\"]"));
     public static Target OPTION_BRIGADA = Target.the("Opcion de brigada seleccionada")
-            .located(By.xpath("//*[@id=\":r31:\"]/li[3]/div/h6"));
+            .located(By.xpath("/html/body/div[4]/div[3]/ul/li[6]"));
     public static Target SELECT_USER = Target.the("Select para el user")
             .located(By.xpath("//*[@id=\"usuario-select\"]"));
     public static Target OPTION_USER = Target.the("Opcion de user seleccionado")
-            .located(By.xpath("//*[@id=\":r33:\"]/li[2]/div"));
+            .located(By.xpath("/html/body/div[4]/div[3]/ul/li[2]"));
     public static Target BTN_CONFIRMAR_UNIDAD = Target.the("Confirmar el crear una unidad")
             .located(By.id("btnConfirmar"));
     public static Target MESSAGE_SUCCESFULLY_UNIDAD = Target.the("Unidad creada correctamente")
-            .located(By.xpath("/div/div/div[2]"));
+            .located(By.xpath("/html/body/div[1]/div/div/div[3]/div/div[2]"));
+    public static Target SELECTS_BRIGADA = Target.the("Opciones de brigada")
+            .located(By.xpath("/html/body/div[4]/div[3]"));
 }
