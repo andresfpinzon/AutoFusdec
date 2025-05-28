@@ -28,11 +28,17 @@ public class RegistroCreado implements Question<Boolean> {
             int totalInicial = obtenerTotal(textoInicial);
             int totalActual = obtenerTotal(textoActual);
 
-            logger.info("El registro se creo correctamente. Paginacion modificada.");
-            logger.info("Total registros iniciales: " + totalInicial);
-            logger.info("Total registros actuales: " + totalActual);
-
-            return totalActual > totalInicial;
+            if (totalActual > totalInicial) {
+                logger.info("El registro se creo correctamente.La paginacion aumento.");
+                logger.info("Total registros iniciales: " + totalInicial);
+                logger.info("Total registros actuales: " + totalActual);
+                return true;
+            } else {
+                logger.error("El registro no se creo. La paginacion no cambio.");
+                logger.info("Total registros iniciales: " + totalInicial);
+                logger.info("Total registros actuales: " + totalActual);
+                return false;
+            }
 
         } catch (Exception e) {
             logger.error("Error verificando si se creo el registro", e);

@@ -12,8 +12,6 @@ import cucumber.api.java.es.Entonces;
 import java.util.List;
 
 import static co.com.AutoFusdec.userinterface.comando.CrearComando.*;
-import static co.com.AutoFusdec.userinterface.estudiante.CrearEstudiante.*;
-import static co.com.AutoFusdec.userinterface.estudiante.CrearEstudiante.PAGINACION_ESTUDIANTES;
 import static net.serenitybdd.screenplay.GivenWhenThen.seeThat;
 import static net.serenitybdd.screenplay.actors.OnStage.theActorInTheSpotlight;
 
@@ -40,9 +38,6 @@ public class CrearComandoStepDefinitions {
                         PAGINACION_COMANDOS
                 )
         );
-
-        theActorInTheSpotlight().should(
-                seeThat(RegistroEliminado.enTabla(PAGINACION_COMANDOS))
-        );
+        theActorInTheSpotlight().should(seeThat(RegistroEliminado.enTabla(PAGINACION_COMANDOS)));
     }
 }
