@@ -39,6 +39,7 @@ public class LlenarFormularioComando implements Task {
                 Enter.theValue(comando.getUbicacion()).into(UBICACION_COMANDO),
                 Click.on(FUNDACION),
                 Click.on(OPCION_FUNDACION),
+                Scroll.to(FUNDACION),
                 Click.on(BTN_ENVIAR_COMANDO)
         );
     }

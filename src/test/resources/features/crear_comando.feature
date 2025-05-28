@@ -12,12 +12,16 @@ Característica: Crear un comando en la página de gestión de comandos del sist
       | correo           | password             |
       | Fusdec@gmail.com | C0ntras3naFusd3cCE   |
 
-  @crearestudiante
+  @crearcomando
   Esquema del escenario: Verificar el registro exitoso de un nuevo comando
     Cuando este en la pagina de comandos diligendiar correctamente el formulario y dar clic a crear comando
       | nombre_comando   | ubicacion   | fundacion   |
       | <nombre_comando> | <ubicacion> | <fundacion> |
     Entonces se debe verificar que el comando se cree correctamente y se agregue a la lista de comandos.
+    Y se debe eliminar este comando.
+      | nombre_comando   | ubicacion   | fundacion   |
+      | <nombre_comando> | <ubicacion> | <fundacion> |
+
     Ejemplos:
-      | nombre_comando | ubicacion                                 | fundacion |
-      | Comando 5      | https://maps.app.goo.gl/1fknWn1kLXxq9upH8 | Fusdec    |
+      | nombre_comando    | ubicacion                                 | fundacion |
+      | Comando de prueba | https://maps.app.goo.gl/1fknWn1kLXxq9upH8 | Fusdec    |
