@@ -8,7 +8,7 @@ import org.openqa.selenium.By;
 public class AccionesBrigadaUI extends PageObject {
     public static Target MENU_LATERAL = Target.the("Menu lateral")
             .located(By.id("menuButtonLateral"));
-    public static Target PAGE_BRIGADA = Target.the("Página de brigada")
+    public static Target BTN_BRIGADA = Target.the("Seleecion de la pagina brigada")
             .located(By.xpath("/html/body/div[2]/div[3]/div/ul/li[2]/div[2]/span"));
     public static Target BTN_AGREGAR_BRIGADA = Target.the("Botón para agregar una brigada")
             .located(By.id("btnAgregarBrigada"));
@@ -28,5 +28,9 @@ public class AccionesBrigadaUI extends PageObject {
             .located(By.id("btnConfirmarBrigada"));
     public static Target MENSAJE_EXITOSO = Target
             .the("Mensaje de exito, de crear brigada").located(By.xpath("//*[@id=\"root\"]/div/div/div[3]/div/div[2]"));
+    public static Target PAGE_BRIGADA = Target.the("Pagina brigada")
+            .located(By.xpath("//*[@id=\"root\"]/div/div/div[2]/div[3]"));
+    public static Target POPPUP_CREAR = Target.the("Modal de crear brigada")
+            .located(By.xpath("//*[@id=\"root\"]/div/div/div[2]/div"));
 
 }
