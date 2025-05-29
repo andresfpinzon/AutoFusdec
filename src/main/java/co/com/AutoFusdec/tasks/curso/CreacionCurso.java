@@ -39,7 +39,7 @@ public class CreacionCurso implements Task {
                 Click.on(INPUT_DESCRIPCION),
                 Enter.theValue(curso.get(0).getDescripcion()).into(INPUT_DESCRIPCION),
                 Click.on(INPUT_INTENSIDAD),
-                Enter.theValue(curso.get(0).getIntensidad()).into(INPUT_INTENSIDAD),
+                Enter.theValue(curso.get(0).getIntensidadHoraria()).into(INPUT_INTENSIDAD),
                 Scroll.to(INPUT_INTENSIDAD),
                 Click.on(BTN_FUNDACION),
                 Click.on(BTN_ELECCION),

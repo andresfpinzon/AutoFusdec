@@ -21,8 +21,8 @@ public class CrearCurso extends PageObject {
     public static Target BTN_ELECCION = Target.the("Boton de seleccion")
             .located(By.xpath("//*[@id=\":rf:\"]/li"));
     public static Target BTN_CREAR = Target.the("Boton de crear")
-            .located(By.xpath("//*[@id=\"root\"]/div/div/form/div[7]/button"));
-    /*public static Target MENSAJE_EXITO = Target.the("mensaje de exito")
-            .located(By.xpath("//div[contains(@class,'MuiAlert-message') and text()='Usuario creado correctamente con sus roles']"));
-    */
+            .located(By.xpath("//*[@id=\"root\"]/div/div/form/div[6]/button"));
+    public static Target MENSAJE_EXITO = Target.the("mensaje de exito")
+            .located(By.xpath("//div[@class='MuiAlert-message' and .='Curso creado correctamente']"));
+
 }

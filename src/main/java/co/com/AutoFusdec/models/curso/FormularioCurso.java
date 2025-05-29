@@ -22,20 +22,20 @@ public class FormularioCurso {
         this.descripcion = descripcion;
     }
 
-    private String intensidad;
+    private String intensidadHoraria;
 
-    public String getIntensidad() {
-        return intensidad;
+    public String getIntensidadHoraria() {
+        return intensidadHoraria;
     }
 
-    public void setIntensidad(String intensidad) {
-        this.intensidad = intensidad;
+    public void setIntensidadHoraria(String intensidadHoraria) {
+        this.intensidadHoraria = intensidadHoraria;
     }
 
     public FormularioCurso(String nombre, String descripcion, String intensidad) {
         this.nombre = nombre;
         this.descripcion = descripcion;
-        this.intensidad = intensidad;
+        this.intensidadHoraria = intensidad;
     }
 
 
