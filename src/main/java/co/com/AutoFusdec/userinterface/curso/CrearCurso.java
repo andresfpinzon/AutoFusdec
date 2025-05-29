@@ -23,6 +23,6 @@ public class CrearCurso extends PageObject {
     public static Target BTN_CREAR = Target.the("Boton de crear")
             .located(By.xpath("//*[@id=\"root\"]/div/div/form/div[6]/button"));
     public static Target MENSAJE_EXITO = Target.the("mensaje de exito")
-            .located(By.xpath("//div[@class='MuiAlert-message' and .='Curso creado correctamente']"));
+            .located(By.xpath("/html/body/div/div/div/div[3]/div/div[2]"));
 
 }

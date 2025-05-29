@@ -13,6 +13,7 @@ import java.util.List;
 
 import static co.com.AutoFusdec.userinterface.pageLogin.AutenticacionFusdec.*;
 
+
 public class AutenticacionTask implements Task {
 
     private List<AutenticacionModel> credenciales;
