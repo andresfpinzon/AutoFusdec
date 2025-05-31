@@ -1,5 +1,7 @@
 package co.com.AutoFusdec.tasks.edicion;
 
+import co.com.AutoFusdec.models.edicion.FormularioEdicion;
+import co.com.AutoFusdec.models.usuario.FormularioUsuario;
 import net.serenitybdd.core.steps.Instrumented;
 import net.serenitybdd.screenplay.Actor;
 import net.serenitybdd.screenplay.Task;
@@ -18,12 +20,10 @@ import static net.serenitybdd.screenplay.matchers.WebElementStateMatchers.isVisi
 
 public class CreacionEdicion implements Task {
 
-    private List<FormularioUsuario> edicion;
+    private List<FormularioEdicion> edicion;
 
 
-    public CreacionEdicion(List<FormularioEdicion> edicion){
-        this.edicion = edicion;
-    }
+    public CreacionEdicion(List<FormularioEdicion> edicion) { this.edicion = edicion; }
 
     public static CreacionEdicion aute(List<FormularioEdicion> edicion){
         return Instrumented.instanceOf(CreacionEdicion.class).withProperties(edicion);
@@ -37,11 +37,11 @@ public class CreacionEdicion implements Task {
                 Click.on(BTN_MENU),
                 Click.on(BTN_EDICION),
                 Click.on(INPUT_TITULO),
-                Enter.theValue(edicion.get(0).getTitulo()).into(INPUT_DOCUMENTO),
+                Enter.theValue(edicion.get(0).getTitulo()).into(INPUT_TITULO),
                 Click.on(INPUT_FECHAI),
-                Enter.theValue(edicion.get(0).getFechaI()).into(INPUT_NOMBRE),
+                /*Enter.theValue(edicion.get(0).getFechaI()).into(INPUT_FECHAI),
                 Click.on(INPUT_FECHAF),
-                Enter.theValue(edicion.get(0).getFechaF()).into(INPUT_APELLIDO),
+                Enter.theValue(edicion.get(0).getFechaF()).into(INPUT_FECHAF),*/
                 Click.on(BTN_CURSO),
                 Click.on(BTN_ELECCION),
                 Click.on(BTN_CREAR)
