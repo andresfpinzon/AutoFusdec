@@ -2,6 +2,7 @@ package co.com.AutoFusdec.tasks.comando;
 
 
 import co.com.AutoFusdec.models.comando.FormularioComando;
+import co.com.AutoFusdec.models.usogeneral.NumeroAleatorio;
 import net.serenitybdd.core.steps.Instrumented;
 import net.serenitybdd.screenplay.Actor;
 import net.serenitybdd.screenplay.Task;
@@ -30,12 +31,13 @@ public class LlenarFormularioComando implements Task {
     @Override
     public <T extends Actor> void performAs(T actor) {
         FormularioComando comando = datos.get(0);
+        String Nombre = comando.getNombre_comando() + NumeroAleatorio.generarNumeroAleatorio();
+        actor.remember("datoFiltro", Nombre);
 
         actor.attemptsTo(
                 WaitUntil.the(NOMBRE_COMANDO, isVisible()).forNoMoreThan(10).seconds(),
                 Click.on(NOMBRE_COMANDO),
-                Enter.theValue(comando.getNombre_comando()).into(NOMBRE_COMANDO),
-                Click.on(UBICACION_COMANDO),
+                Enter.theValue(Nombre).into(NOMBRE_COMANDO),
                 Enter.theValue(comando.getUbicacion()).into(UBICACION_COMANDO),
                 Click.on(FUNDACION),
                 Click.on(OPCION_FUNDACION),

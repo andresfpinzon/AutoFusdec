@@ -1,12 +1,9 @@
 package co.com.AutoFusdec.questions.estudiante;
 
-import co.com.AutoFusdec.models.estudiante.FormularioEstudiante;
 import co.com.AutoFusdec.questions.usogeneral.RegistroEliminado;
 import co.com.AutoFusdec.tasks.usogeneral.EliminarRegistro;
 import net.serenitybdd.screenplay.Actor;
 import net.serenitybdd.screenplay.Question;
-
-import java.util.List;
 
 import static co.com.AutoFusdec.userinterface.estudiante.CrearEstudiante.*;
 import static jxl.biff.FormatRecord.logger;
@@ -15,14 +12,9 @@ import static jxl.biff.FormatRecord.logger;
 
 public class EstudianteEliminado implements Question<Boolean> {
 
-    List<FormularioEstudiante> datosEstudiante;
 
-    public EstudianteEliminado(List<FormularioEstudiante> datosEstudiante) {
-        this.datosEstudiante = datosEstudiante;
-    }
-
-    public static Question<Boolean> conDatos(List<FormularioEstudiante> datosEstudiante) {
-        return new EstudianteEliminado(datosEstudiante);
+    public static Question<Boolean> seElimino() {
+        return new EstudianteEliminado();
     }
 
     @Override
@@ -31,7 +23,6 @@ public class EstudianteEliminado implements Question<Boolean> {
         try {
             actor.attemptsTo(
                     EliminarRegistro.con(
-                            datosEstudiante,
                             BUSQUEDA_ESTUDIANTES,
                             BTN_ELIMINAR_ESTUDIANTE,
                             BTN_CONFIRMAR_ELIMINAR_ESTUDIANTE,

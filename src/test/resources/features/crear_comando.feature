@@ -18,10 +18,7 @@ Característica: Crear un comando en la página de gestión de comandos del sist
       | nombre_comando   | ubicacion   | fundacion   |
       | <nombre_comando> | <ubicacion> | <fundacion> |
     Entonces se debe verificar que el comando se cree correctamente y se agregue a la lista de comandos.
-    Y se debe eliminar este comando.
-      | nombre_comando   | ubicacion   | fundacion   |
-      | <nombre_comando> | <ubicacion> | <fundacion> |
 
     Ejemplos:
       | nombre_comando    | ubicacion                                 | fundacion |
-      | Comando de prueba | https://maps.app.goo.gl/1fknWn1kLXxq9upH8 | Fusdec    |
+      | comando de prueba | https://maps.app.goo.gl/1fknWn1kLXxq9upH8 | Fusdec    |

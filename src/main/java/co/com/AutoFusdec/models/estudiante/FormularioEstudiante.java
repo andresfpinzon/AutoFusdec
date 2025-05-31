@@ -1,8 +1,6 @@
 package co.com.AutoFusdec.models.estudiante;
 
-import co.com.AutoFusdec.models.usogeneral.Filtrable;
-
-public class FormularioEstudiante implements Filtrable {
+public class FormularioEstudiante {
 
     private String numero_documento;
     private String nombre;
@@ -98,9 +96,5 @@ public class FormularioEstudiante implements Filtrable {
         this.grado = grado;
     }
 
-    @Override
-    public String getValorFiltro() {
-        return numero_documento;
-    }
 
 }

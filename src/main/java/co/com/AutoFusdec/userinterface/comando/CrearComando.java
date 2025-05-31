@@ -28,5 +28,11 @@ public class CrearComando {
     public static Target BTN_CONFIRMAR_ELIMINAR_COMANDO = Target.the("Boton confirmar eliminar comando")
             .located(By.id("confirmarEliminar"));
 
+    public static Target ELEMENTO_LISTA_COMANDO = Target.the("Comando creado en lista")
+            .located(By.xpath("/html/body/div/div/div/div/div[2]/div[2]/table/tbody/tr/td[1]"));
+
+
+
+
 
 }

@@ -1,6 +1,5 @@
 package co.com.AutoFusdec.tasks.usogeneral;
 
-import co.com.AutoFusdec.models.usogeneral.Filtrable;
 import net.serenitybdd.core.steps.Instrumented;
 import net.serenitybdd.screenplay.Actor;
 import net.serenitybdd.screenplay.Task;
@@ -14,35 +13,32 @@ import static co.com.AutoFusdec.userinterface.estudiante.CrearEstudiante.PAGINAC
 
 public class EliminarRegistro implements Task {
 
-    private final List<? extends Filtrable> datos;
     private final Target campoFiltro;
     private final Target botonEliminar;
     private final Target botonConfirmarEliminar;
     private final Target paginacion;
 
 
-    public EliminarRegistro(List<? extends Filtrable> datos, Target campoFiltro, Target botonEliminar, Target botonConfirmarEliminar, Target paginacion) {
-        this.datos = datos;
+    public EliminarRegistro( Target campoFiltro, Target botonEliminar, Target botonConfirmarEliminar, Target paginacion) {
         this.campoFiltro = campoFiltro;
         this.botonEliminar = botonEliminar;
         this.botonConfirmarEliminar = botonConfirmarEliminar;
         this.paginacion = paginacion;
     }
 
-    public static EliminarRegistro con(List<? extends Filtrable> datos, Target campoFiltro, Target botonEliminar, Target botonConfirmarEliminarEstudiante, Target paginacion) {
+    public static EliminarRegistro con(Target campoFiltro, Target botonEliminar, Target botonConfirmarEliminarEstudiante, Target paginacion) {
         return Instrumented.instanceOf(EliminarRegistro.class)
-                .withProperties(datos, campoFiltro, botonEliminar, botonConfirmarEliminarEstudiante, paginacion);
+                .withProperties(campoFiltro, botonEliminar, botonConfirmarEliminarEstudiante, paginacion);
     }
 
     @Override
     public <T extends Actor> void performAs(T actor) {
-        Filtrable registro = datos.get(0);
-        String valorFiltro = registro.getValorFiltro();
+        String datoFiltro = actor.recall("datoFiltro");
 
         actor.attemptsTo(
                 PaginacionInicial.conNombre("paginacion_despues_crear", paginacion),
                 Click.on(campoFiltro),
-                Enter.theValue(valorFiltro).into(campoFiltro),
+                Enter.theValue(datoFiltro).into(campoFiltro),
                 Click.on(botonEliminar),
                 Click.on(botonConfirmarEliminar),
                 PaginacionInicial.conNombre("paginacion_despues_eliminar", paginacion),

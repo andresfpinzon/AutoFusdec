@@ -1,8 +1,6 @@
 package co.com.AutoFusdec.models.comando;
 
-import co.com.AutoFusdec.models.usogeneral.Filtrable;
-
-public class FormularioComando implements Filtrable {
+public class FormularioComando{
 
     private String nombre_comando;
     private String ubicacion;
@@ -36,11 +34,6 @@ public class FormularioComando implements Filtrable {
         this.nombre_comando = nombre_comando;
         this.ubicacion = ubicacion;
         this.fundacion = fundacion;
-    }
-
-    @Override
-    public String getValorFiltro() {
-        return nombre_comando;
     }
 
 }

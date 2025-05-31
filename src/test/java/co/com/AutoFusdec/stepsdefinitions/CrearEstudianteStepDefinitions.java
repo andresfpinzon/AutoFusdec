@@ -3,9 +3,7 @@ package co.com.AutoFusdec.stepsdefinitions;
 import co.com.AutoFusdec.models.estudiante.FormularioEstudiante;
 import co.com.AutoFusdec.questions.estudiante.EstudianteEliminado;
 import co.com.AutoFusdec.questions.usogeneral.RegistroCreado;
-import co.com.AutoFusdec.questions.usogeneral.RegistroEliminado;
 import co.com.AutoFusdec.tasks.estudiante.CreacionEstudiante;
-import co.com.AutoFusdec.tasks.usogeneral.EliminarRegistro;
 import cucumber.api.java.es.Cuando;
 import cucumber.api.java.es.Entonces;
 
@@ -29,7 +27,7 @@ public class CrearEstudianteStepDefinitions {
     }
 
     @Entonces("se debe eliminar este estudiante")
-    public void eliminarEsteEstudiante(List<FormularioEstudiante> datosEstudiante) {
-        theActorInTheSpotlight().should(seeThat(EstudianteEliminado.conDatos(datosEstudiante)));
+    public void eliminarEsteEstudiante() {
+        theActorInTheSpotlight().should(seeThat(EstudianteEliminado.seElimino()));
     }
 }

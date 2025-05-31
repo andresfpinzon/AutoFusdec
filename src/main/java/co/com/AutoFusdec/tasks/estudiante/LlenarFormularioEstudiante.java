@@ -29,6 +29,7 @@ public class LlenarFormularioEstudiante implements Task {
     @Override
     public <T extends Actor> void performAs(T actor) {
         FormularioEstudiante estudiante = datos.get(0);
+        actor.remember("datoFiltro", estudiante.getNumero_documento());
 
         actor.attemptsTo(
                 WaitUntil.the(NUMERO_DOCUMENTO, isVisible()).forNoMoreThan(10).seconds(),

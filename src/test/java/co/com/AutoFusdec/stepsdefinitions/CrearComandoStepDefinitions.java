@@ -2,6 +2,7 @@ package co.com.AutoFusdec.stepsdefinitions;
 
 import co.com.AutoFusdec.models.comando.FormularioComando;
 import co.com.AutoFusdec.models.estudiante.FormularioEstudiante;
+import co.com.AutoFusdec.questions.comando.ComandoCreado;
 import co.com.AutoFusdec.questions.usogeneral.RegistroCreado;
 import co.com.AutoFusdec.questions.usogeneral.RegistroEliminado;
 import co.com.AutoFusdec.tasks.comando.CreacionComando;
@@ -24,20 +25,7 @@ public class CrearComandoStepDefinitions {
 
     @Entonces("^se debe verificar que el comando se cree correctamente y se agregue a la lista de comandos\\.$")
     public void seDebeVerificarQueElComandoSeCreeCorrectamenteYSeAgregueALaListaDeComandos() {
-        theActorInTheSpotlight().should(seeThat(RegistroCreado.enTabla(PAGINACION_COMANDOS)));
+        theActorInTheSpotlight().should(seeThat(ComandoCreado.seCreo()));
     }
 
-    @Entonces("se debe eliminar este comando")
-    public void eliminarComando(List<FormularioComando> datosComando) {
-        theActorInTheSpotlight().attemptsTo(
-                EliminarRegistro.con(
-                        datosComando,
-                        BUSQUEDA_COMANDOS,
-                        BTN_ELIMINAR_COMANDO,
-                        BTN_CONFIRMAR_ELIMINAR_COMANDO,
-                        PAGINACION_COMANDOS
-                )
-        );
-        theActorInTheSpotlight().should(seeThat(RegistroEliminado.enTabla(PAGINACION_COMANDOS)));
-    }
 }
