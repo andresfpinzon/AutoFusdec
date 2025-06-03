@@ -1,6 +1,9 @@
 package co.com.AutoFusdec.tasks.estudiante;
 
 import co.com.AutoFusdec.models.estudiante.FormularioEstudiante;
+import co.com.AutoFusdec.models.usogeneral.NumeroAleatorio;
+import co.com.AutoFusdec.models.usogeneral.SessionVariables;
+import co.com.AutoFusdec.tasks.waitTask.Esperar;
 import net.serenitybdd.core.steps.Instrumented;
 import net.serenitybdd.screenplay.Actor;
 import net.serenitybdd.screenplay.Task;
@@ -29,10 +32,15 @@ public class LlenarFormularioEstudiante implements Task {
     @Override
     public <T extends Actor> void performAs(T actor) {
         FormularioEstudiante estudiante = datos.get(0);
-        actor.remember("datoFiltro", estudiante.getNumero_documento());
+        String numeroDocumento = estudiante.getNumero_documento() + NumeroAleatorio.generarNumeroAleatorio();
+
+        actor.remember(SessionVariables.NumeroDocumento.toString(), numeroDocumento);
+        actor.remember(SessionVariables.NombreEstudiante.toString(), estudiante.getNombre());
+        actor.remember(SessionVariables.ApellidoEstudiante.toString(), estudiante.getApellido());
 
         actor.attemptsTo(
-                WaitUntil.the(NUMERO_DOCUMENTO, isVisible()).forNoMoreThan(10).seconds(),
+
+                Esperar.forElement(NUMERO_DOCUMENTO),
                 Click.on(NUMERO_DOCUMENTO),
                 Enter.theValue(estudiante.getNumero_documento()).into(NUMERO_DOCUMENTO),
                 Click.on(NOMBRE),

@@ -53,5 +53,10 @@ public class CrearEstudiante extends PageObject {
             .located(By.id("confirmarEliminar"));
 
 
+    public static Target ELEMENTO_LISTA_DOCUMENTO = Target.the("Campo documento en lista")
+            .located(By.xpath("/html/body/div/div/div/div[2]/table/tbody/tr/td[1]"));
+
+    public static Target ELEMENTO_LISTA_NOMBRE = Target.the("Campo nombre en lista")
+            .located(By.xpath("/html/body/div/div/div/div[2]/table/tbody/tr/td[2]"));
 
 }

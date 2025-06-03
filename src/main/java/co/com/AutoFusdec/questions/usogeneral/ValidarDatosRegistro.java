@@ -11,27 +11,31 @@ public class ValidarDatosRegistro implements Question<Boolean> {
 
     private final Target elementoLista;
 
-    public ValidarDatosRegistro(Target elementoLista) {
+    private final String datoFiltro;
+
+    public ValidarDatosRegistro(Target elementoLista, String datoFiltro) {
+
         this.elementoLista = elementoLista;
+        this.datoFiltro = datoFiltro;
     }
 
-    public static ValidarDatosRegistro en(Target elementoLista) {
-        return new ValidarDatosRegistro(elementoLista);
+    public static ValidarDatosRegistro en(Target elementoLista, String datoFiltro) {
+        return new ValidarDatosRegistro(elementoLista, datoFiltro);
     }
 
     @Override
     public Boolean answeredBy(Actor actor) {
 
-        String datofiltro = actor.recall("datoFiltro");
 
-        if (datofiltro == null) {
+
+        if (datoFiltro == null) {
             logger.warn("datoFiltro no se encontró en la memoria del actor");
             return false;
         }
 
         try {
             String texto = Text.of(elementoLista).viewedBy(actor).asString();
-            if (datofiltro.equals(texto)){
+            if (datoFiltro.equals(texto)){
                 return true;
             }else{
                 return false;

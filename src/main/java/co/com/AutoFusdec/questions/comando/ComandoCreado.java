@@ -1,5 +1,6 @@
 package co.com.AutoFusdec.questions.comando;
 
+import co.com.AutoFusdec.models.usogeneral.SessionVariables;
 import co.com.AutoFusdec.questions.usogeneral.RegistroCreado;
 import co.com.AutoFusdec.questions.usogeneral.ValidarDatosRegistro;
 import co.com.AutoFusdec.tasks.usogeneral.LimpiarFiltro;
@@ -20,11 +21,12 @@ public class ComandoCreado implements Question<Boolean> {
     public Boolean answeredBy(Actor actor) {
 
         try {
+            String filtro = actor.recall(SessionVariables.NombreComando.toString());
             actor.attemptsTo(
-                    LlenarFiltro.con(BUSQUEDA_COMANDOS)
+                    LlenarFiltro.con(BUSQUEDA_COMANDOS,filtro)
             );
 
-            boolean datosValidos = ValidarDatosRegistro.en(ELEMENTO_LISTA_COMANDO).answeredBy(actor);
+            boolean datosValidos = ValidarDatosRegistro.en(ELEMENTO_LISTA_COMANDO, filtro).answeredBy(actor);
 
             if (datosValidos) {
                 logger.info("Los datos del comando son validos.");

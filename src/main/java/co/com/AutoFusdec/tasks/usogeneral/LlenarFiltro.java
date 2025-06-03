@@ -12,18 +12,21 @@ public class LlenarFiltro implements Task {
 
     private final Target campoFiltro;
 
-    public LlenarFiltro(Target campoFiltro) {
+    private final String datoFiltro;
+
+    public LlenarFiltro(Target campoFiltro, String datoFiltro) {
         this.campoFiltro = campoFiltro;
+        this.datoFiltro = datoFiltro;
     }
 
-    public static LlenarFiltro con(Target campoFiltro) {
+    public static LlenarFiltro con(Target campoFiltro, String datoFiltro) {
         return Instrumented.instanceOf(LlenarFiltro.class)
-                .withProperties(campoFiltro);
+                .withProperties(campoFiltro, datoFiltro);
     }
 
     @Override
     public <T extends Actor> void performAs(T actor) {
-        String datoFiltro = actor.recall("datoFiltro");
+
         actor.attemptsTo(
                 Click.on(campoFiltro),
                 Enter.theValue(datoFiltro).into(campoFiltro)
