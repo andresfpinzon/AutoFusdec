@@ -52,11 +52,13 @@ public class CrearEstudiante extends PageObject {
     public static Target BTN_CONFIRMAR_ELIMINAR_ESTUDIANTE = Target.the("Boton confirmar eliminar estudiante")
             .located(By.id("confirmarEliminar"));
 
-
     public static Target ELEMENTO_LISTA_DOCUMENTO = Target.the("Campo documento en lista")
             .located(By.xpath("/html/body/div/div/div/div[2]/table/tbody/tr/td[1]"));
 
     public static Target ELEMENTO_LISTA_NOMBRE = Target.the("Campo nombre en lista")
             .located(By.xpath("/html/body/div/div/div/div[2]/table/tbody/tr/td[2]"));
+
+    public static Target ELEMENTO_LISTA_APELLIDO = Target.the("Campo apellido en lista")
+            .located(By.xpath("/html/body/div/div/div/div[2]/table/tbody/tr/td[3]"));
 
 }

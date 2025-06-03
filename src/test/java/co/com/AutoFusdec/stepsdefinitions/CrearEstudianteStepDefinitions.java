@@ -1,6 +1,7 @@
 package co.com.AutoFusdec.stepsdefinitions;
 
 import co.com.AutoFusdec.models.estudiante.FormularioEstudiante;
+import co.com.AutoFusdec.questions.estudiante.EstudianteCreado;
 import co.com.AutoFusdec.questions.estudiante.EstudianteEliminado;
 import co.com.AutoFusdec.questions.usogeneral.RegistroCreado;
 import co.com.AutoFusdec.tasks.estudiante.CreacionEstudiante;
@@ -23,7 +24,7 @@ public class CrearEstudianteStepDefinitions {
 
     @Entonces("^se debe verificar que el estudiante se cree correctamente y se agregue a la lista de estudiantes\\.$")
     public void seDebeVerificarQueElEstudianteSeCreeCorrectamenteYSeAgregueALaListaDeEstudiantes() {
-        theActorInTheSpotlight().should(seeThat(RegistroCreado.enTabla(PAGINACION_ESTUDIANTES)));
+        theActorInTheSpotlight().should(seeThat(EstudianteCreado.seCreo()));
     }
 
    /* @Entonces("se debe eliminar este estudiante")

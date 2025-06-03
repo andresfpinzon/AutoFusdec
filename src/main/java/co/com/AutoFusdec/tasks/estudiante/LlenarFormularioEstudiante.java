@@ -42,7 +42,7 @@ public class LlenarFormularioEstudiante implements Task {
 
                 Esperar.forElement(NUMERO_DOCUMENTO),
                 Click.on(NUMERO_DOCUMENTO),
-                Enter.theValue(estudiante.getNumero_documento()).into(NUMERO_DOCUMENTO),
+                Enter.theValue(numeroDocumento).into(NUMERO_DOCUMENTO),
                 Click.on(NOMBRE),
                 Enter.theValue(estudiante.getNombre()).into(NOMBRE),
                 Click.on(APELLIDO),
