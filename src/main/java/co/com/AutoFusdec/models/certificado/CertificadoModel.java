@@ -5,7 +5,6 @@ public class CertificadoModel {
     private String horasCompletadas;
     private String fechaEmision;
 
-    // Default constructor
     public CertificadoModel(String estudianteId, String horasCompletadas, String fechaEmision) {
         this.estudianteId = estudianteId;
         this.horasCompletadas = horasCompletadas;
@@ -35,5 +34,4 @@ public class CertificadoModel {
     public void setFechaEmision(String fechaEmision) {
         this.fechaEmision = fechaEmision;
     }
-
 }

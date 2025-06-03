@@ -5,12 +5,15 @@ Característica: Crear un certificado en la página de gestión de certificados 
   Como usuario con rol administrador
   Quiero registrar un nuevo certificado desde la página de gestión de certificados
 
+  Antecedentes:
+    Dado que el usuario se encuentra en la pagina de inicio de sesion de Fusdec
+    Cuando ingrese las credenciales correctas (correo y contrasena)
+      | correo           | password             |
+      | Fusdec@gmail.com | C0ntras3naFusd3cCE   |
+
   @crearcertficados
   Escenario: Verificar el registro exitoso de un nuevo certificado
-    Dado que el usuario se encuentra autenticado en el sistema con los siguientes datos:
-      | correo              | password    |
-      | admin@fusdec.com    | password123 |
     Cuando este en la pagina de certificados y seleccione correctamente todos los campos:
-      | estudianteId | horasCompletadas | fechaEmision |
-      | Juan Perez   | 80 Horas         | 2023-10-01   |
+      | estudianteId         | horasCompletadas | fechaEmision |
+      | ana lópez - 20000001 | 80 Horas         | 30/05/2025   |
     Entonces se debe verificar que el certificado se cree correctamente
