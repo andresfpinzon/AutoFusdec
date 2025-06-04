@@ -1,53 +1,73 @@
 package co.com.AutoFusdec.questions.estudiante;
 
+import co.com.AutoFusdec.models.usogeneral.SessionVariables;
+import co.com.AutoFusdec.questions.usogeneral.RegistroCreado;
+import co.com.AutoFusdec.questions.usogeneral.ValidarDatosRegistro;
+import co.com.AutoFusdec.tasks.usogeneral.LimpiarFiltro;
+import co.com.AutoFusdec.tasks.usogeneral.LlenarFiltro;
 import net.serenitybdd.screenplay.Actor;
 import net.serenitybdd.screenplay.Question;
-import net.serenitybdd.screenplay.questions.Text;
+
+import static co.com.AutoFusdec.userinterface.comando.CrearComando.BUSQUEDA_COMANDOS;
+import static co.com.AutoFusdec.userinterface.comando.CrearComando.PAGINACION_COMANDOS;
+import static co.com.AutoFusdec.userinterface.estudiante.CrearEstudiante.*;
 import static jxl.biff.FormatRecord.logger;
-
-import static co.com.AutoFusdec.userinterface.estudiante.CrearEstudiante.PAGINACION_ESTUDIANTES;
-
 
 public class EstudianteCreado implements Question<Boolean> {
 
-
-
-    public static Question<Boolean> estaCreado() {
+    public static Question<Boolean> seCreo(){
         return new EstudianteCreado();
     }
-
     @Override
-    public Boolean answeredBy(Actor actor) {
-        try {
-            String textoInicial = actor.recall("paginacion_inicial");
-            String textoActual = Text.of(PAGINACION_ESTUDIANTES).viewedBy(actor).asString().trim();
+    public Boolean answeredBy(Actor actor){
+        try{
+            String filtro = actor.recall(SessionVariables.NumeroDocumento.toString());
+            String filtro2 = actor.recall(SessionVariables.NombreEstudiante.toString());
+            String filtro3 = actor.recall(SessionVariables.ApellidoEstudiante.toString());
 
-            int totalInicial = obtenerTotal(textoInicial);
-            int totalActual = obtenerTotal(textoActual);
+            actor.attemptsTo(
+                    LlenarFiltro.con(BUSQUEDA_ESTUDIANTES, filtro)
+            );
 
-            logger.info("El estudiante se creo correctamente dado que la paginacion en la tabla se modifico" );
-            logger.info("Total registros iniciales: " + totalInicial);
-            logger.info("Total registros actuales: " + totalActual);
+            boolean numeroValido = ValidarDatosRegistro.en(ELEMENTO_LISTA_DOCUMENTO,filtro).answeredBy(actor);
 
-            return totalActual > totalInicial;
-
-        } catch (Exception e) {
-            logger.error("Error verificando si se creó el estudiante", e);
-            return false;
-        }
-    }
-
-    private int obtenerTotal(String texto) {
-        try {
-            String[] partes = texto.split("of");
-            if (partes.length == 2) {
-                return Integer.parseInt(partes[1].trim());
+            if (numeroValido) {
+                logger.info("El numero de documento se ingreso correctamente");
+            } else {
+                logger.error("El el numero de documento no se ingreso correctamente");
             }
-        } catch (Exception e) {
-            logger.error("No se pudo extraer el total del texto: " + texto, e);
+
+            boolean nombreValido = ValidarDatosRegistro.en(ELEMENTO_LISTA_NOMBRE,filtro2).answeredBy(actor);
+
+            if (nombreValido) {
+                logger.info("El nombre del estudiante se ingreso correctamente");
+            } else {
+                logger.error("El nombre del estudiante no se ingreso correctamente");
+            }
+
+            boolean apellidoValido = ValidarDatosRegistro.en(ELEMENTO_LISTA_APELLIDO,filtro3).answeredBy(actor);
+
+            if (apellidoValido) {
+                logger.info("El apellido del estudiante se ingreso correctamente");
+            } else {
+                logger.error("El apellido del estudiante no se ingreso correctamente");
+            }
+
+            actor.attemptsTo(
+                    LimpiarFiltro.con(BUSQUEDA_ESTUDIANTES)
+            );
+
+            boolean registroCreado = RegistroCreado.enTabla(PAGINACION_ESTUDIANTES).answeredBy(actor);
+            if (numeroValido && nombreValido && registroCreado && apellidoValido){
+                return true;
+            }else{
+                return false;
+            }
+        }catch (Exception e){
+            logger.error("Error Verificando si se creo el estudiante", e);
+            return false;
+
         }
-        return -1;
     }
+
 }
-
-
