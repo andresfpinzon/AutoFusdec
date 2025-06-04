@@ -16,9 +16,9 @@ Característica: Crear una edicion en la página de gestión de ediciones del si
 
   Esquema del escenario: Verificar el registro exitoso de una nueva edicion
     Cuando este en la pagina de ediciones diligenciar correctamente el formulario y dar clic a crear edicion:
-      |  titulo  |
-      | <titulo> |
+      | titulo   | fechaI   | fechaF   |
+      | <titulo> | <fechaI> | <fechaF> |
     Entonces se debe verificar que la edicion se cree correctamente y se agregue a la lista de ediciones.
   Ejemplos:
-    |  titulo  |
-    |   2025   |
+    | titulo | fechaI     | fechaF     |
+    | 2025   | 23/05/2025 | 30/05/2025 |

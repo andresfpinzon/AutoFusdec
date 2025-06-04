@@ -13,9 +13,10 @@ public class CrearEdicion extends PageObject {
     public static Target INPUT_TITULO = Target.the(" Ingreso del titulo")
             .located(By.id("titulo"));
     public static Target INPUT_FECHAI = Target.the("Ingreso de la fecha inicio")
-            .located(By.id("fechaInicio"));
+            .located(By.xpath("//*[@id=\"fechaInicio\"]"));
+
     public static Target INPUT_FECHAF = Target.the("Ingreso de la fecha fin")
-            .located(By.xpath("fechaFin"));
+            .located(By.cssSelector("input[id='fechaFin']"));
     public static Target BTN_CURSO = Target.the("Seleccione el curso")
             .located(By.id("cursoId"));
     public static Target BTN_ELECCION = Target.the("Boton de seleccion de curso")
