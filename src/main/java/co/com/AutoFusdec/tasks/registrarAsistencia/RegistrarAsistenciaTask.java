@@ -1,5 +1,6 @@
 package co.com.AutoFusdec.tasks.registrarAsistencia;
 
+import co.com.AutoFusdec.tasks.usogeneral.SeleccionarOpcionDelMenu;
 import co.com.AutoFusdec.tasks.waitTask.Esperar;
 import net.serenitybdd.screenplay.Actor;
 import net.serenitybdd.screenplay.Task;
@@ -28,9 +29,7 @@ public class RegistrarAsistenciaTask implements Task {
 
             // Hacer clic en el menú desplegable, después de asegurarse que está visible
             actor.attemptsTo(
-                    Esperar.forElement(MENU_DESPLEGABLE,15),
-                    Click.on(MENU_DESPLEGABLE),
-                    Esperar.forElement(PAGE_ASISTENCIA,15),
+                    SeleccionarOpcionDelMenu.conOpcion(PAGE_ASISTENCIA),
                     Click.on(PAGE_ASISTENCIA),
                     Enter.theValue(numeroDocumento).into(INPUT_ESTUDIANTE),
                     Click.on(CHECKBOX_ASISTENCIA),
