@@ -31,25 +31,27 @@ public class EstudianteCreado implements Question<Boolean> {
 
             boolean numeroValido = ValidarDatosRegistro.en(ELEMENTO_LISTA_DOCUMENTO,filtro).answeredBy(actor);
 
-            actor.attemptsTo(
-                    LimpiarFiltro.con(BUSQUEDA_ESTUDIANTES)
-            );
-
-            actor.attemptsTo(
-                    LlenarFiltro.con(BUSQUEDA_ESTUDIANTES, filtro2)
-            );
+            if (numeroValido) {
+                logger.info("El numero de documento se ingreso correctamente");
+            } else {
+                logger.error("El el numero de documento no se ingreso correctamente");
+            }
 
             boolean nombreValido = ValidarDatosRegistro.en(ELEMENTO_LISTA_NOMBRE,filtro2).answeredBy(actor);
 
-            actor.attemptsTo(
-                    LimpiarFiltro.con(BUSQUEDA_ESTUDIANTES)
-            );
-
-            actor.attemptsTo(
-                    LlenarFiltro.con(BUSQUEDA_ESTUDIANTES, filtro3)
-            );
+            if (nombreValido) {
+                logger.info("El nombre del estudiante se ingreso correctamente");
+            } else {
+                logger.error("El nombre del estudiante no se ingreso correctamente");
+            }
 
             boolean apellidoValido = ValidarDatosRegistro.en(ELEMENTO_LISTA_APELLIDO,filtro3).answeredBy(actor);
+
+            if (apellidoValido) {
+                logger.info("El apellido del estudiante se ingreso correctamente");
+            } else {
+                logger.error("El apellido del estudiante no se ingreso correctamente");
+            }
 
             actor.attemptsTo(
                     LimpiarFiltro.con(BUSQUEDA_ESTUDIANTES)
