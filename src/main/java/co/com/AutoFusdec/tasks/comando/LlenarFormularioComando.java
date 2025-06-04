@@ -36,7 +36,6 @@ public class LlenarFormularioComando implements Task {
         FormularioComando comando = datos.get(0);
         String nombre = comando.getNombre_comando() + NumeroAleatorio.generarNumeroAleatorio();
 
-
         actor.attemptsTo(
                 Esperar.forElement(NOMBRE_COMANDO),
                 Click.on(NOMBRE_COMANDO),
@@ -47,6 +46,7 @@ public class LlenarFormularioComando implements Task {
                 Scroll.to(FUNDACION),
                 Click.on(BTN_ENVIAR_COMANDO)
         );
+
         theActorInTheSpotlight().remember(SessionVariables.NombreComando.toString(),nombre);
     }
 }

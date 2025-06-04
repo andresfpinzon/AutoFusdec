@@ -27,8 +27,4 @@ public class CrearEstudianteStepDefinitions {
         theActorInTheSpotlight().should(seeThat(EstudianteCreado.seCreo()));
     }
 
-   /* @Entonces("se debe eliminar este estudiante")
-    public void eliminarEsteEstudiante() {
-        theActorInTheSpotlight().should(seeThat(EstudianteEliminado.seElimino()));
-    }*/
 }

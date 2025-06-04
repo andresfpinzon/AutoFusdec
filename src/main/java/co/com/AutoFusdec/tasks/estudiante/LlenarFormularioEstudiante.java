@@ -15,7 +15,7 @@ import net.serenitybdd.screenplay.waits.WaitUntil;
 import java.util.List;
 
 import static co.com.AutoFusdec.userinterface.estudiante.CrearEstudiante.*;
-import static net.serenitybdd.screenplay.matchers.WebElementStateMatchers.isVisible;
+import static net.serenitybdd.screenplay.actors.OnStage.theActorInTheSpotlight;
 
 public class LlenarFormularioEstudiante implements Task {
 
@@ -34,12 +34,7 @@ public class LlenarFormularioEstudiante implements Task {
         FormularioEstudiante estudiante = datos.get(0);
         String numeroDocumento = estudiante.getNumero_documento() + NumeroAleatorio.generarNumeroAleatorio();
 
-        actor.remember(SessionVariables.NumeroDocumento.toString(), numeroDocumento);
-        actor.remember(SessionVariables.NombreEstudiante.toString(), estudiante.getNombre());
-        actor.remember(SessionVariables.ApellidoEstudiante.toString(), estudiante.getApellido());
-
         actor.attemptsTo(
-
                 Esperar.forElement(NUMERO_DOCUMENTO),
                 Click.on(NUMERO_DOCUMENTO),
                 Enter.theValue(numeroDocumento).into(NUMERO_DOCUMENTO),
@@ -63,6 +58,9 @@ public class LlenarFormularioEstudiante implements Task {
                 Scroll.to(GRADO),
                 Click.on(BTN_ENVIAR_ESTUDIANTE)
         );
+        theActorInTheSpotlight().remember(SessionVariables.NumeroDocumento.toString(), numeroDocumento);
+        theActorInTheSpotlight().remember(SessionVariables.NombreEstudiante.toString(), estudiante.getNombre());
+        theActorInTheSpotlight().remember(SessionVariables.ApellidoEstudiante.toString(), estudiante.getApellido());
     }
 }
 

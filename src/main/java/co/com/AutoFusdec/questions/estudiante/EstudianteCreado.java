@@ -32,7 +32,7 @@ public class EstudianteCreado implements Question<Boolean> {
             boolean numeroValido = ValidarDatosRegistro.en(ELEMENTO_LISTA_DOCUMENTO,filtro).answeredBy(actor);
 
             actor.attemptsTo(
-                    LimpiarFiltro.con(BUSQUEDA_COMANDOS)
+                    LimpiarFiltro.con(BUSQUEDA_ESTUDIANTES)
             );
 
             actor.attemptsTo(
@@ -42,7 +42,7 @@ public class EstudianteCreado implements Question<Boolean> {
             boolean nombreValido = ValidarDatosRegistro.en(ELEMENTO_LISTA_NOMBRE,filtro2).answeredBy(actor);
 
             actor.attemptsTo(
-                    LimpiarFiltro.con(BUSQUEDA_COMANDOS)
+                    LimpiarFiltro.con(BUSQUEDA_ESTUDIANTES)
             );
 
             actor.attemptsTo(
@@ -52,7 +52,7 @@ public class EstudianteCreado implements Question<Boolean> {
             boolean apellidoValido = ValidarDatosRegistro.en(ELEMENTO_LISTA_APELLIDO,filtro3).answeredBy(actor);
 
             actor.attemptsTo(
-                    LimpiarFiltro.con(BUSQUEDA_COMANDOS)
+                    LimpiarFiltro.con(BUSQUEDA_ESTUDIANTES)
             );
 
             boolean registroCreado = RegistroCreado.enTabla(PAGINACION_ESTUDIANTES).answeredBy(actor);
