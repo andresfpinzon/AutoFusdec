@@ -24,16 +24,10 @@ public class RegistrarAsistenciaTask implements Task {
 
     @Override
     public  <T extends Actor> void performAs(T actor){
-
-
-
-            // Hacer clic en el menú desplegable, después de asegurarse que está visible
             actor.attemptsTo(
                     SeleccionarOpcionDelMenu.conOpcion(PAGE_ASISTENCIA),
-                    Click.on(PAGE_ASISTENCIA),
-                    Enter.theValue(numeroDocumento).into(INPUT_ESTUDIANTE),
-                    Click.on(CHECKBOX_ASISTENCIA),
-                    Click.on(BTN_GUARDAR_ASISTENCIA)
+                    FormAsistence.with(numeroDocumento)
+
             );
 
 
