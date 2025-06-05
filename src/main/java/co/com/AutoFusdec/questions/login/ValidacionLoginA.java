@@ -9,10 +9,10 @@ import static co.com.AutoFusdec.userinterface.login.Login.MENU_DESPEGABLE;
 import static jxl.biff.FormatRecord.logger;
 import static net.serenitybdd.screenplay.matchers.WebElementStateMatchers.isVisible;
 
-public class ValidacionLogin implements Question<Boolean> {
+public class ValidacionLoginA implements Question<Boolean> {
 
-    public static ValidacionLogin validacionLogin() {
-        return new ValidacionLogin();
+    public static ValidacionLoginA validacionLogin() {
+        return new ValidacionLoginA();
     }
 
     @Override

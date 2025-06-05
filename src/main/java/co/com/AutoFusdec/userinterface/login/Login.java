@@ -18,5 +18,5 @@ public class Login extends PageObject  {
    public static Target BTN_INGRESAR = Target.the("dar click en el boton para  diiriigirse a la pagina de inicio ")
            .located(By.xpath("//*[@id=\"iniciarSesionButton\"]"));
    public static Target MENU_DESPEGABLE = Target.the("Veriificar que se ingreso a la pagina de inicio")
-           .located(By.id("menuLateral"));
+           .located(By.id("menuButtonLateral"));
 }
