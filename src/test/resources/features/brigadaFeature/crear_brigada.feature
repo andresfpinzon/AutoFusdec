@@ -16,7 +16,7 @@ Característica: Crear un Brigada en la página de gestión de brigadas del sist
       Cuando estoy en la página de gestión de brigadas dar click en agregar, llenar campos y confirmar
       | nombreBrigada | ubicacionBrigada |
       |<nombreBrigada>|<ubicacionBrigada>|
-      Entonces se debe verificar que el brigada se cree correctamente ingrsando en el buscador "Brigada Doña Juana"
+      Entonces se debe verificar que la brigada se creo correctamente ingresando en el buscador el nombre de la brigada
       Ejemplos:
         | nombreBrigada|ubicacionBrigada|
         |Brigada Doña Juana|https://maps.app.goo.gl/NLQe3jj8YHQHdDUd8|
