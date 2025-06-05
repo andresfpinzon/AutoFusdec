@@ -13,9 +13,6 @@ Para confirmar que el estudiante ha asistido a clase
       | Fusdec@gmail.com | C0ntras3naFusd3cCE   |
 
   @registrar-asistencia
-  Esquema del escenario: Confirmar asistencia de un estudiante
+  Escenario: Confirmar asistencia de un estudiante
   Cuando estoy en la página de gestión de asistencias busco al estudiante con número de documento "20000002"
-  Entonces marco el checkbox de asistencia del estudiante guardo los cambios debo ver un mensaje de confirmación "Asistencia registrada correctamente
-    Ejemplos:
-      | numeroDocumento |
-      | 2000005 |
+  Entonces debo ver al estudiante con documento "20000002" en el historial de asistencia

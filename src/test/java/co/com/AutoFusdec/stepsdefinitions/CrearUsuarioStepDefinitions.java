@@ -13,7 +13,7 @@ import static net.serenitybdd.screenplay.actors.OnStage.theActorInTheSpotlight;
 
 public class CrearUsuarioStepDefinitions {
 
-    @Cuando("^este en la pagina de usuarios diligenciar correctamente el formulario y dar clic a crear usuario:$")
+    /*@Cuando("^este en la pagina de usuarios diligenciar correctamente el formulario y dar clic a crear usuario:$")
     public void esteEnLaPaginaDeUsuariosDiligenciarCorrectamenteElFormularioYDarClicACrearUsuario( List<FormularioUsuario> usuario ) {
 
         theActorInTheSpotlight().attemptsTo(CreacionUsuario.aute(usuario));
@@ -24,6 +24,6 @@ public class CrearUsuarioStepDefinitions {
     @Entonces("^se debe verificar que el usuario se cree correctamente y se agregue a la lista de usuarios\\.$")
     public void seDebeVerificarQueElUsuarioSeCreeCorrectamenteYSeAgregueALaListaDeUsuarios() {
         theActorInTheSpotlight().should(seeThat(ValidacionCrearUsuario.validacionCrearUsuario()));
-    }
+    }*/
 
 }

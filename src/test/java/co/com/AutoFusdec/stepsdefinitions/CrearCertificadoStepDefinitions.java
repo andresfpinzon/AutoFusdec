@@ -14,6 +14,7 @@ import static org.hamcrest.Matchers.equalTo;
 
 public class CrearCertificadoStepDefinitions {
 
+
     @Cuando("^este en la pagina de certificados y seleccione correctamente todos los campos:$")
     public void esteEnLaPaginaDeCertificadosYSeleccioneCorrectamenteTodosLosCampos(List<CertificadoModel> certificados) {
         theActorInTheSpotlight().attemptsTo(CreacionCertificado.interaction(certificados));
@@ -23,4 +24,5 @@ public class CrearCertificadoStepDefinitions {
     public void seDebeVerificarQueElCertificadoSeCreeCorrectamente() {
         theActorInTheSpotlight().should(seeThat(CertificadoCreado.estaCreado(), equalTo(true)));
     }
+
 }
