@@ -1,4 +1,4 @@
-package co.com.AutoFusdec.stepsdefinitions;
+package co.com.AutoFusdec.stepsdefinitions.stepsAsistence;
 
 
 import co.com.AutoFusdec.models.autenticacion.AutenticacionModel;
