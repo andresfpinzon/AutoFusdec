@@ -24,7 +24,11 @@ public class FormAsistence implements Task {
         actor.attemptsTo(
                 Enter.theValue(numeroDocumento).into(INPUT_ESTUDIANTE),
                 Click.on(CHECKBOX_ASISTENCIA),
-                Click.on(BTN_GUARDAR_ASISTENCIA)
+                Click.on(BTN_GUARDAR_ASISTENCIA),
+                Click.on(BTN_HISTORIAL),
+                Click.on(BTN_DETALLES_HISTORIAL),
+                Enter.theValue(numeroDocumento).into(INPUT_IDENTIFICACION_VALIDACION)
+
         );
     }
 }
