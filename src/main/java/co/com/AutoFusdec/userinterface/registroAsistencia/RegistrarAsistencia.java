@@ -19,4 +19,15 @@ public class RegistrarAsistencia extends PageObject {
             .the("Mensaje de exito del registro de asistencia").located(By.xpath("/html/body/div/div/div/div[2]/div"));
 
 
+    public static Target BTN_HISTORIAL = Target.the("Boton del historial")
+            .located(By.id("btnHistorialAsistence"));
+
+    public static Target BTN_DETALLES_HISTORIAL = Target.the("Detalles del historial")
+            .located(By.xpath("/html/body/div[2]/div[3]/div/div[1]/div[1]/table/tbody/tr/td[5]/button[1]"));
+
+    public static Target INPUT_IDENTIFICACION_VALIDACION = Target.the("Validar documento")
+            .located(By.id("inputIdentificacionAsistenciaValidacion"));
+
+    public static Target NUMERO_VALIDACION = Target.the("Validar Identificacion")
+            .located(By.cssSelector("table  tbody  tr  td:nth-child(1)"));
 }
