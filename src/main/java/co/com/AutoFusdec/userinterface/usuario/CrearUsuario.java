@@ -11,15 +11,15 @@ public class CrearUsuario extends PageObject {
     public static Target BTN_USUARIO = Target.the("Boton de usuarios")
             .located(By.xpath("/html/body/div[2]/div[3]/div/ul/li[8]/div[2]/span"));
     public static Target INPUT_DOCUMENTO = Target.the(" Ingreso del numero de documento")
-            .located(By.xpath("//*[@id=\"numeroDocumento\"]"));
+            .located(By.id("numeroDocumento"));
     public static Target INPUT_NOMBRE = Target.the("Ingreso del nombre")
-            .located(By.xpath("//*[@id=\"nombre\"]"));
+            .located(By.id("nombre"));
     public static Target INPUT_APELLIDO = Target.the("Ingreso del apellido ")
-            .located(By.xpath("//*[@id=\"apellido\"]"));
+            .located(By.id("apellido"));
     public static Target INPUT_CORREO = Target.the("Ingrese el correo")
-            .located(By.xpath("//*[@id=\"correo\"]"));
+            .located(By.id("correo"));
     public static Target INPUT_PASSWORD = Target.the("Ingreso de la contraseña")
-            .located(By.xpath("//*[@id=\"password\"]"));
+            .located(By.id("password"));
     public static Target BTN_ROL = Target.the("Boton de enviar")
             .located(By.xpath("//*[@id=\"root\"]/div/div/form/div[6]/div/div"));
 

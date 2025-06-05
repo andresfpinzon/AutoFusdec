@@ -10,7 +10,7 @@ public class CrearCertificadoStepDefinitions {
 
     }*/
     
-    @Cuando("^este en la pagina de certificados y seleccione correctamente todos los campo$")
+    /*@Cuando("^este en la pagina de certificados y seleccione correctamente todos los campo$")
     public void esteEnLaPaginaDeCertificadosYSeleccioneCorrectamenteTodosLosCampo() {
 
     }
@@ -18,5 +18,5 @@ public class CrearCertificadoStepDefinitions {
     @Entonces("^se debe verificar que el certificado se cree correctamente$")
     public void seDebeVerificarQueElCertificadoSeCreeCorrectamente() {
 
-    }
+    }*/
 }

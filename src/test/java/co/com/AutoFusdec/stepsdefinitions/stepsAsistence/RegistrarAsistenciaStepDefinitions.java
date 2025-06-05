@@ -16,7 +16,7 @@ import static net.serenitybdd.screenplay.actors.OnStage.theActorInTheSpotlight;
 import static net.serenitybdd.screenplay.GivenWhenThen.seeThat;
 
 public class RegistrarAsistenciaStepDefinitions {
-
+    
     @Cuando("^estoy en la página de gestión de asistencias busco al estudiante con número de documento \"([^\"]*)\"$")
     public void estoyEnLaPáginaDeGestiónDeAsistenciasBuscoAlEstudianteConNúmeroDeDocumento(String arg1) {
         theActorInTheSpotlight().attemptsTo(RegistrarAsistenciaTask.conDocumento(arg1));
@@ -25,4 +25,5 @@ public class RegistrarAsistenciaStepDefinitions {
     public void deboVerAlEstudianteConDocumentoEnElHistorialDeAsistencia(String arg1) {
         theActorInTheSpotlight().should(seeThat(ValidacionRegistroAsistencia.conDocumento(arg1)));
     }
+
 }
