@@ -1,6 +1,7 @@
 package co.com.AutoFusdec.tasks.curso;
 
 import co.com.AutoFusdec.models.curso.FormularioCurso;
+import co.com.AutoFusdec.models.usogeneral.NumeroAleatorio;
 import net.serenitybdd.core.steps.Instrumented;
 import net.serenitybdd.screenplay.Actor;
 import net.serenitybdd.screenplay.Task;
@@ -29,13 +30,14 @@ public class CreacionCurso implements Task {
 
     @Override
     public <T extends Actor> void performAs(T actor) {
+        String nombre = curso.get(0).getNombre() + NumeroAleatorio.generarNumeroAleatorio();
 
         actor.attemptsTo(
                 WaitUntil.the(BTN_MENU, isVisible()).forNoMoreThan(10).seconds(),
                 Click.on(BTN_MENU),
                 Click.on(BTN_CURSO),
                 Click.on(INPUT_NOMBRE),
-                Enter.theValue(curso.get(0).getNombre()).into(INPUT_NOMBRE),
+                Enter.theValue(nombre).into(INPUT_NOMBRE),
                 Click.on(INPUT_DESCRIPCION),
                 Enter.theValue(curso.get(0).getDescripcion()).into(INPUT_DESCRIPCION),
                 Click.on(INPUT_INTENSIDAD),

@@ -1,5 +1,6 @@
 package co.com.AutoFusdec.questions.curso;
 
+import co.com.AutoFusdec.questions.usogeneral.MensajeExito;
 import net.serenitybdd.screenplay.Actor;
 import net.serenitybdd.screenplay.Question;
 import net.serenitybdd.screenplay.questions.Text;
@@ -16,8 +17,18 @@ public class ValidacionCrearCurso implements Question<Boolean> {
     @Override
     public Boolean answeredBy(Actor actor) {
         try {
-            String texto = Text.of(MENSAJE_EXITO).viewedBy(actor).asString();
-            return "Curso creado correctamente".equals(texto);
+            String texto = "Curso creado correctamente";
+            boolean confirmacion = MensajeExito.seVe(MENSAJE_EXITO, texto).answeredBy(actor);
+            if (confirmacion){
+                return true;
+            }else {
+                return false;
+            }
+
+            // aquí
+
+
+
         } catch (Exception e) {
             logger.info(" No encontró el texto o hubo otro error");
             return false;
