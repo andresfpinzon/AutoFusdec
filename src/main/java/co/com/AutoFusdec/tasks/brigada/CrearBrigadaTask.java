@@ -26,19 +26,7 @@ public class CrearBrigadaTask implements Task {
     @Override
     public  <T extends Actor> void performAs(T actor){
         actor.attemptsTo(
-                Esperar.forElement(MENU_LATERAL),
-                Click.on(MENU_LATERAL),
-                Click.on(BTN_BRIGADA),
-                Esperar.forElement(PAGE_BRIGADA),
-                Click.on(BTN_AGREGAR_BRIGADA),
-                Esperar.forElement(POPPUP_CREAR,15),
-                Enter.theValue(datos.get(0).getNombreBrigada()).into(INPUT_NOMBRE_BRIGADA),
-                Enter.theValue(datos.get(0).getUbicacionBrigada()).into(INPUT_UBICACION_BRIGADA),
-                Click.on(SELECT_COMANDO),
-                Click.on(OPTION_COMANDO),
-                Click.on(SELECT_HORARIO_COMANDO),
-                Click.on(OPTION_HORARIO),
-                Click.on(BTN_CONFIRMAR_BRIGADA)
+                BrigadaForm.withData(datos)
         );
     }
 }
