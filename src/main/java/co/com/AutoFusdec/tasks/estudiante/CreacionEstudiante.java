@@ -3,6 +3,7 @@ package co.com.AutoFusdec.tasks.estudiante;
 import co.com.AutoFusdec.models.estudiante.FormularioEstudiante;
 import co.com.AutoFusdec.tasks.usogeneral.PaginacionInicial;
 import co.com.AutoFusdec.tasks.usogeneral.SeleccionarOpcionDelMenu;
+import co.com.AutoFusdec.tasks.waitTask.Esperar;
 import net.serenitybdd.core.steps.Instrumented;
 import net.serenitybdd.screenplay.Actor;
 import net.serenitybdd.screenplay.Task;
@@ -29,7 +30,7 @@ public class CreacionEstudiante implements Task {
     public <T extends Actor> void performAs(T actor) {
         actor.attemptsTo(
                 SeleccionarOpcionDelMenu.conOpcion(MENU_DRAWER_ESTUDIANTE),
-                WaitUntil.the(PAGINACION_ESTUDIANTES, isVisible()).forNoMoreThan(10).seconds(),
+                Esperar.forElement(PAGINACION_ESTUDIANTES),
                 PaginacionInicial.conNombre("paginacion_inicial", PAGINACION_ESTUDIANTES),
                 LlenarFormularioEstudiante.con(datosEstudiante)
         );
