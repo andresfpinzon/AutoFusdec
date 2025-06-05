@@ -1,6 +1,7 @@
 package co.com.AutoFusdec.questions.estudiante;
 
 import co.com.AutoFusdec.models.usogeneral.SessionVariables;
+import co.com.AutoFusdec.questions.usogeneral.MensajeExito;
 import co.com.AutoFusdec.questions.usogeneral.RegistroCreado;
 import co.com.AutoFusdec.questions.usogeneral.ValidarDatosRegistro;
 import co.com.AutoFusdec.tasks.usogeneral.LimpiarFiltro;
@@ -24,6 +25,16 @@ public class EstudianteCreado implements Question<Boolean> {
             String filtro = actor.recall(SessionVariables.NumeroDocumento.toString());
             String filtro2 = actor.recall(SessionVariables.NombreEstudiante.toString());
             String filtro3 = actor.recall(SessionVariables.ApellidoEstudiante.toString());
+
+            String mensaje = "Estudiante creado correctamente";
+
+            boolean mensajeExito = MensajeExito.seVe(MENSAJE_EXITO_ESTUDIANTE,mensaje).answeredBy(actor);
+
+            if (mensajeExito) {
+                logger.info("El Mensaje de exito es visible");
+            } else {
+                logger.error("El Mensaje de exito no es visible");
+            }
 
             actor.attemptsTo(
                     LlenarFiltro.con(BUSQUEDA_ESTUDIANTES, filtro)
@@ -58,7 +69,8 @@ public class EstudianteCreado implements Question<Boolean> {
             );
 
             boolean registroCreado = RegistroCreado.enTabla(PAGINACION_ESTUDIANTES).answeredBy(actor);
-            if (numeroValido && nombreValido && registroCreado && apellidoValido){
+
+            if (numeroValido && nombreValido && registroCreado && apellidoValido && mensajeExito){
                 return true;
             }else{
                 return false;

@@ -1,4 +1,4 @@
-package co.com.AutoFusdec.tasks.autenticacion;
+package co.com.AutoFusdec.tasks.brigada.autenticacion;
 
 import co.com.AutoFusdec.models.autenticacion.AutenticacionModel;
 import net.serenitybdd.core.steps.Instrumented;
