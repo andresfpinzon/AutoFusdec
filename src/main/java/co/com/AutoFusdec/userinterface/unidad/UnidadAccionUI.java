@@ -20,7 +20,8 @@ public class UnidadAccionUI extends PageObject {
     public static Target SELECT_BRIGADA = Target.the("Select para una brigada")
             .located(By.xpath("//*[@id=\"brigada-select\"]"));
     public static Target OPTION_BRIGADA = Target.the("Opcion de brigada seleccionada")
-            .located(By.xpath("/html/body/div[4]/div[3]/ul/li[6]"));
+            .located(By.cssSelector("li:nth-child(3)  div  h6"));
+
     public static Target SELECT_USER = Target.the("Select para el user")
             .located(By.xpath("//*[@id=\"usuario-select\"]"));
     public static Target OPTION_USER = Target.the("Opcion de user seleccionado")
@@ -31,10 +32,9 @@ public class UnidadAccionUI extends PageObject {
             .located(By.xpath("/html/body/div[1]/div/div/div[3]/div/div[2]"));
     public static Target SELECTS_BRIGADA = Target.the("Opciones de brigada")
             .located(By.xpath("/html/body/div[4]/div[3]"));
-
     public static Target INPUT_SEARCH_UNIDAD = Target.the("Buscar Unidad")
             .located(By.id("inputSearchUnidad"));
 
     public static Target TXT_VALIDATION_UNIDAD = Target.the("Validar el nombre de la unidad")
-            .located(By.xpath("//*[@id=\"root\"]/div/div/div[2]/div[1]/div[1]/h3"));
+            .located(By.xpath("//*[@id=\"root\"]/div/div/div[2]/div/div[1]/h3"));
 }
