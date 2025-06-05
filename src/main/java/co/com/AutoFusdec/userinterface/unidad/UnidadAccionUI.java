@@ -31,4 +31,10 @@ public class UnidadAccionUI extends PageObject {
             .located(By.xpath("/html/body/div[1]/div/div/div[3]/div/div[2]"));
     public static Target SELECTS_BRIGADA = Target.the("Opciones de brigada")
             .located(By.xpath("/html/body/div[4]/div[3]"));
+
+    public static Target INPUT_SEARCH_UNIDAD = Target.the("Buscar Unidad")
+            .located(By.id("inputSearchUnidad"));
+
+    public static Target TXT_VALIDATION_UNIDAD = Target.the("Validar el nombre de la unidad")
+            .located(By.xpath("//*[@id=\"root\"]/div/div/div[2]/div[1]/div[1]/h3"));
 }
