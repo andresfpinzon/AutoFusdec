@@ -22,19 +22,7 @@ public class CrearUnidadTask implements Task {
     @Override
     public  <T extends Actor> void performAs(T actor){
         actor.attemptsTo(
-                Esperar.forElement(MENU_LATERAL_UNIDAD),
-                Click.on(MENU_LATERAL_UNIDAD),
-                Click.on(BTN_UNIDAD),
-                Esperar.forElement(PAGE_UNIDAD),
-                Click.on(BNT_AGREGAR_UNIDAD),
-                Esperar.forElement(POPPUP_CREAR_UNIDAD),
-                Enter.theValue(nombre).into(INPUT_NOMBRE_UNIDAD),
-                Click.on(SELECT_BRIGADA),
-                Esperar.forElement(SELECTS_BRIGADA),
-                Click.on(OPTION_BRIGADA),
-                Click.on(SELECT_USER),
-                Click.on(OPTION_USER),
-                Click.on(BTN_CONFIRMAR_UNIDAD)
+                UnidadForm.intoName(nombre)
         );
     }
 }

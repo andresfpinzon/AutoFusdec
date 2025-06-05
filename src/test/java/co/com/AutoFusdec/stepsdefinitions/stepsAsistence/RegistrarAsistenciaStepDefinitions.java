@@ -1,4 +1,4 @@
-package co.com.AutoFusdec.stepsdefinitions;
+package co.com.AutoFusdec.stepsdefinitions.stepsAsistence;
 
 
 import co.com.AutoFusdec.models.autenticacion.AutenticacionModel;
@@ -16,16 +16,14 @@ import static net.serenitybdd.screenplay.actors.OnStage.theActorInTheSpotlight;
 import static net.serenitybdd.screenplay.GivenWhenThen.seeThat;
 
 public class RegistrarAsistenciaStepDefinitions {
-
-
-
+    
     @Cuando("^estoy en la página de gestión de asistencias busco al estudiante con número de documento \"([^\"]*)\"$")
-    public void estoyEnLaPáginaDeGestiónDeAsistenciasBuscoAlEstudianteConNúmeroDeDocumento(String documento) {
-        theActorInTheSpotlight().attemptsTo(RegistrarAsistenciaTask.conDocumento(documento));
+    public void estoyEnLaPáginaDeGestiónDeAsistenciasBuscoAlEstudianteConNúmeroDeDocumento(String arg1) {
+        theActorInTheSpotlight().attemptsTo(RegistrarAsistenciaTask.conDocumento(arg1));
+    }
+    @Entonces("^debo ver al estudiante con documento \"([^\"]*)\" en el historial de asistencia$")
+    public void deboVerAlEstudianteConDocumentoEnElHistorialDeAsistencia(String arg1) {
+        theActorInTheSpotlight().should(seeThat(ValidacionRegistroAsistencia.conDocumento(arg1)));
     }
 
-    @Entonces("^marco el checkbox de asistencia del estudiante guardo los cambios debo ver un mensaje de confirmación \"Asistencia registrada correctamente$")
-    public void marcoElCheckboxDeAsistenciaDelEstudianteGuardoLosCambiosDeboVerUnMensajeDeConfirmaciónAsistenciaRegistradaCorrectamente() {
-        theActorInTheSpotlight().should(seeThat(ValidacionRegistroAsistencia.validacionRegistroAsistencia()));
-    }
 }

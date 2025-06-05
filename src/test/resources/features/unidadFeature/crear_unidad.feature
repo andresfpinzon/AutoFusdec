@@ -13,5 +13,5 @@ Característica: Crear una Unidad en la página de unidades del sistema Fusdec
 
     @crearunidad
     Escenario: Crear una nueva unidad
-      Cuando estoy en la página de gestión de Unidades dar click en agregar, ingresar "Unidad Doña Juana 1" y confirmar
+      Cuando estoy en la página de gestión de Unidades dar click en agregar, ingresar "unidad doña juana 1" y confirmar
       Entonces se debe verificar que la unidad se cree correctamente

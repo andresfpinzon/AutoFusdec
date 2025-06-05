@@ -12,14 +12,16 @@ import static net.serenitybdd.screenplay.GivenWhenThen.seeThat;
 import static net.serenitybdd.screenplay.actors.OnStage.theActorInTheSpotlight;
 
 public class CrearBrigadaStepDefinitions {
+
     @Cuando("^estoy en la página de gestión de brigadas dar click en agregar, llenar campos y confirmar$")
     public void estoyEnLaPáginaDeGestiónDeBrigadasDarClickEnAgregarLlenarCamposYConfirmar(List<BrigadaModel> datos) {
         theActorInTheSpotlight().attemptsTo(CrearBrigadaTask.ingresarDatosBrigada(datos));
     }
 
 
-    @Entonces("^se debe verificar que el brigada se cree correctamente$")
-    public void seDebeVerificarQueElBrigadaSeCreeCorrectamente() {
-        theActorInTheSpotlight().should(seeThat(ValidacionCrearBrigada.creado()));
+    @Entonces("^se debe verificar que la brigada se creo correctamente ingresando en el buscador el nombre de la brigada$")
+    public void seDebeVerificarQueLaBrigadaSeCreoCorrectamenteIngresandoEnElBuscadorElNombreDeLaBrigada() {
+        theActorInTheSpotlight().should(seeThat(ValidacionCrearBrigada.validacionCrearBrigada()));
     }
+
 }

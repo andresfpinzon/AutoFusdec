@@ -1,5 +1,6 @@
 package co.com.AutoFusdec.tasks.usogeneral;
 
+import co.com.AutoFusdec.tasks.waitTask.Esperar;
 import co.com.AutoFusdec.userinterface.interfaz.InterfazUsuario;
 import net.serenitybdd.screenplay.Task;
 import net.serenitybdd.screenplay.actions.Click;
@@ -27,7 +28,9 @@ public class SeleccionarOpcionDelMenu implements Task {
     @Override
     public <T extends Actor> void performAs(T actor) {
         actor.attemptsTo(
+                Esperar.forElement(InterfazUsuario.MENU_DRAWER),
                 Click.on(InterfazUsuario.MENU_DRAWER),
+                Esperar.forElement(opcion),
                 Click.on(opcion)
         );
     }

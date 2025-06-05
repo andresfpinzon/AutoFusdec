@@ -7,9 +7,9 @@ import org.junit.runner.RunWith;
 
 @RunWith(CucumberWithSerenity.class)
 @CucumberOptions(
-        features = "src/test/resources/features/registrar_asistencia.feature",
+        features = "src/test/resources/features/crear_curso.feature",
         glue = {"co.com.AutoFusdec.stepsdefinitions", "co.com.AutoFusdec.utils.hooks"},
         snippets = SnippetType.CAMELCASE)
 
-public class RegistrarAsistenciaRunner {
+public class CrearCursoRunner {
 }

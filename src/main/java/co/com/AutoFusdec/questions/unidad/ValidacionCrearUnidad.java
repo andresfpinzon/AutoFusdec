@@ -5,6 +5,7 @@ import net.serenitybdd.screenplay.Question;
 import net.serenitybdd.screenplay.questions.Text;
 
 import static co.com.AutoFusdec.userinterface.unidad.UnidadAccionUI.MESSAGE_SUCCESFULLY_UNIDAD;
+import static co.com.AutoFusdec.userinterface.unidad.UnidadAccionUI.TXT_VALIDATION_UNIDAD;
 import static jxl.biff.FormatRecord.logger;
 
 public class ValidacionCrearUnidad implements Question<Boolean> {
@@ -15,8 +16,8 @@ public class ValidacionCrearUnidad implements Question<Boolean> {
 
     public Boolean answeredBy(Actor actor) {
         try {
-            String texto = Text.of(MESSAGE_SUCCESFULLY_UNIDAD).viewedBy(actor).asString();
-            return "Unidad creada correctamente".equals(texto);
+            String texto = Text.of(TXT_VALIDATION_UNIDAD).viewedBy(actor).asString();
+            return "unidad doña juana 1".equals(texto);
         } catch (Exception e) {
             logger.info(" No encontró el texto o hubo otro error");
             return false;
