@@ -11,7 +11,6 @@ import static co.com.AutoFusdec.userinterface.brigada.AccionesBrigadaUI.*;
 public class ValidacionCrearBrigada implements Question<Boolean> {
     private static final Logger LOGGER = LoggerFactory.getLogger(ValidacionCrearBrigada.class);
 
-    // Textos esperados (pueden ser parámetros si lo prefieres)
     private static final String TEXTO_ESPERADO_BRIGADA = "brigada doña juana";
     private static final String MENSAJE_EXITO_ESPERADO = "Brigada creada correctamente";
 

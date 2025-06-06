@@ -17,6 +17,6 @@ public class CrearUnidadStepDefinitions {
 
     @Entonces("^se debe verificar que la unidad se cree correctamente$")
     public void seDebeVerificarQueLaUnidadSeCreeCorrectamente() {
-        theActorInTheSpotlight().should(seeThat(ValidacionCrearUnidad.creado()));
+        theActorInTheSpotlight().should(seeThat(ValidacionCrearUnidad.validacionCompleta()));
     }
 }

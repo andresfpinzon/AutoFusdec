@@ -35,6 +35,6 @@ public class UnidadAccionUI extends PageObject {
     public static Target INPUT_SEARCH_UNIDAD = Target.the("Buscar Unidad")
             .located(By.id("inputSearchUnidad"));
 
-    public static Target TXT_VALIDATION_UNIDAD = Target.the("Validar el nombre de la unidad")
+    public static Target TXT_VALIDATION_UNIDAD = Target.the("unidad doña juana 1")
             .located(By.xpath("//*[@id=\"root\"]/div/div/div[2]/div/div[1]/h3"));
 }
