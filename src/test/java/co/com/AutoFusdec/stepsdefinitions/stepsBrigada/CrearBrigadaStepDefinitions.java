@@ -21,7 +21,7 @@ public class CrearBrigadaStepDefinitions {
 
     @Entonces("^se debe verificar que la brigada se creo correctamente ingresando en el buscador el nombre de la brigada$")
     public void seDebeVerificarQueLaBrigadaSeCreoCorrectamenteIngresandoEnElBuscadorElNombreDeLaBrigada() {
-        theActorInTheSpotlight().should(seeThat(ValidacionCrearBrigada.validacionCrearBrigada()));
+        theActorInTheSpotlight().should(seeThat(ValidacionCrearBrigada.validacionCompleta()));
     }
 
 }
