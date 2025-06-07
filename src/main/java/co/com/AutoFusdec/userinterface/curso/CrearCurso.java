@@ -25,4 +25,14 @@ public class CrearCurso extends PageObject {
     public static Target MENSAJE_EXITO = Target.the("mensaje de exito")
             .located(By.xpath("/html/body/div/div/div/div[3]/div/div[2]"));
 
+    public static Target BUSQUEDA_CURSOS = Target.the("Barra de busqueda")
+            .located(By.id("busquedaCurso"));
+
+    public static Target ELEMENTO_LISTA_NOMBRE = Target.the("Campo nombre en lista")
+            .located(org.openqa.selenium.By.xpath("//*[@id=\"root\"]/div/div/div[2]/table/tbody/tr[1]/td[1]"));
+
+    public static Target PAGINACION_CURSOS = Target.the("paginacion de cursos")
+            .located(By.id("paginacionCurso"));
+
+
 }

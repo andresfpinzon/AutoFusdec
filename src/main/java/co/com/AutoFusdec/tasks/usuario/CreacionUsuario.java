@@ -1,5 +1,6 @@
 package co.com.AutoFusdec.tasks.usuario;
 
+import co.com.AutoFusdec.models.usogeneral.NumeroAleatorio;
 import co.com.AutoFusdec.models.usuario.FormularioUsuario;
 import net.serenitybdd.core.steps.Instrumented;
 import net.serenitybdd.screenplay.Actor;
@@ -27,21 +28,22 @@ public class CreacionUsuario implements Task {
 
     @Override
     public <T extends Actor> void performAs(T actor) {
+        String documento = usuario.get(0).getNumeroDocumento() + NumeroAleatorio.generarNumeroAleatorio();
 
         actor.attemptsTo(
                 WaitUntil.the(BTN_MENU, isVisible()).forNoMoreThan(10).seconds(),
                 Click.on(BTN_MENU),
                 Click.on(BTN_USUARIO),
                 Click.on(INPUT_DOCUMENTO),
-                Enter.theValue(usuario.get(0).getNumeroDocumento()).into(INPUT_DOCUMENTO),
+                Enter.theValue(documento).into(INPUT_DOCUMENTO),
                 Click.on(INPUT_NOMBRE),
                 Enter.theValue(usuario.get(0).getNombre()).into(INPUT_NOMBRE),
                 Click.on(INPUT_APELLIDO),
                 Enter.theValue(usuario.get(0).getApellido()).into(INPUT_APELLIDO),
                 Click.on(INPUT_CORREO),
                 Enter.theValue(usuario.get(0).getCorreo()).into(INPUT_CORREO),
+                Scroll.to(INPUT_CORREO),
                 Click.on(INPUT_PASSWORD),
-                Scroll.to(INPUT_PASSWORD),
                 Enter.theValue(usuario.get(0).getPassword()).into(INPUT_PASSWORD),
                 Click.on(BTN_ROL),
                 Click.on(BTN_ELECCION),
