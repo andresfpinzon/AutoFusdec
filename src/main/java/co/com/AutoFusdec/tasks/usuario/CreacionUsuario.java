@@ -29,6 +29,8 @@ public class CreacionUsuario implements Task {
     @Override
     public <T extends Actor> void performAs(T actor) {
         String documento = usuario.get(0).getNumeroDocumento() + NumeroAleatorio.generarNumeroAleatorio();
+        String correo = usuario.get(0).getCorreo() + NumeroAleatorio.generarNumeroAleatorio();
+
 
         actor.attemptsTo(
                 WaitUntil.the(BTN_MENU, isVisible()).forNoMoreThan(10).seconds(),
@@ -41,7 +43,7 @@ public class CreacionUsuario implements Task {
                 Click.on(INPUT_APELLIDO),
                 Enter.theValue(usuario.get(0).getApellido()).into(INPUT_APELLIDO),
                 Click.on(INPUT_CORREO),
-                Enter.theValue(usuario.get(0).getCorreo()).into(INPUT_CORREO),
+                Enter.theValue(correo).into(INPUT_CORREO),
                 Scroll.to(INPUT_CORREO),
                 Click.on(INPUT_PASSWORD),
                 Enter.theValue(usuario.get(0).getPassword()).into(INPUT_PASSWORD),
