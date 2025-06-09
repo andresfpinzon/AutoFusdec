@@ -23,8 +23,8 @@ public class CrearCertificadoStepDefinitions {
 
     @Entonces("^se debe verificar que el certificado se cree correctamente$")
     public void seDebeVerificarQueElCertificadoSeCreeCorrectamente() {
-        //.should(seeThat(CertificadoCreado.estaCreado(), equalTo(true)));
-        theActorInTheSpotlight().should(seeThat(ElCertificadoSeGenero.correctamente()));
+        theActorInTheSpotlight().should(seeThat(CertificadoCreado.estaCreado()));
+        //theActorInTheSpotlight().should(seeThat(ElCertificadoSeGenero.correctamente()));
     }
 
 }
