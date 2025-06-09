@@ -18,7 +18,7 @@ Característica: Crear un curso en la página de gestión de cursos del sistema 
     Cuando este en la pagina de cursos diligenciar correctamente el formulario y dar clic a crear curso:
       |  nombre  |  descripcion  |  intensidadHoraria  |
       | <nombre> | <descripcion> | <intensidadHoraria> |
-    Entonces se debe verificar que el usuario se cree correctamente y se agregue a la lista de usuarios.
+    Entonces se debe verificar que el curso se cree correctamente y se agregue a la lista de cursos.
   Ejemplos:
     |   nombre    |      descripcion      | intensidadHoraria |
     | CursoPrueba | descripcion de prueba |      120 horas    |

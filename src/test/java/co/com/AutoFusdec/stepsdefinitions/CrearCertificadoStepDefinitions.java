@@ -2,6 +2,7 @@ package co.com.AutoFusdec.stepsdefinitions;
 
 import co.com.AutoFusdec.models.certificado.CertificadoModel;
 import co.com.AutoFusdec.questions.CertificadoCreado.CertificadoCreado;
+import co.com.AutoFusdec.questions.CertificadoCreado.ElCertificadoSeGenero;
 import co.com.AutoFusdec.tasks.certificado.CreacionCertificado;
 import cucumber.api.java.es.Cuando;
 import cucumber.api.java.es.Entonces;
@@ -22,7 +23,8 @@ public class CrearCertificadoStepDefinitions {
 
     @Entonces("^se debe verificar que el certificado se cree correctamente$")
     public void seDebeVerificarQueElCertificadoSeCreeCorrectamente() {
-        theActorInTheSpotlight().should(seeThat(CertificadoCreado.estaCreado(), equalTo(true)));
+        //.should(seeThat(CertificadoCreado.estaCreado(), equalTo(true)));
+        theActorInTheSpotlight().should(seeThat(ElCertificadoSeGenero.correctamente()));
     }
 
 }
