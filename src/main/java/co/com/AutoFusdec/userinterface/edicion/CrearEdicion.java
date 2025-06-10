@@ -27,4 +27,18 @@ public class CrearEdicion extends PageObject {
     public static Target MENSAJE_EXITO = Target.the("Boton de crear")
             .located(By.xpath("//div[contains(@class,'MuiAlert-message') and text()='Usuario creado correctamente con sus roles']"));
 
+    public static Target BUSQUEDA_EDICIONES = Target.the("Barra de busqueda")
+            .located(By.id("busquedaEdicion"));
+
+    public static Target ELEMENTO_LISTA_TITULO = Target.the("Campo titulo en lista")
+            .located(org.openqa.selenium.By.xpath("//*[@id=\"root\"]/div/div/div[2]/table/tbody/tr[1]/td[1]"));
+
+    public static Target ELEMENTO_LISTA_FECHAI = Target.the("Campo fecha inicio en lista")
+            .located(org.openqa.selenium.By.xpath("//*[@id=\"root\"]/div/div/div[2]/table/tbody/tr[1]/td[2]"));
+
+    public static Target ELEMENTO_LISTA_FECHAF = Target.the("Campo fecha fin en lista")
+            .located(org.openqa.selenium.By.xpath("//*[@id=\"root\"]/div/div/div[2]/table/tbody/tr[1]/td[3]"));
+
+    public static Target PAGINACION_EDICIONES = Target.the("paginacion de ediciones")
+            .located(By.id("paginacionEdicion"));
 }
