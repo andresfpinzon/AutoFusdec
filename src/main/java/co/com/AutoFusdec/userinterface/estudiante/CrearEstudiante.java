@@ -61,4 +61,6 @@ public class CrearEstudiante extends PageObject {
     public static Target ELEMENTO_LISTA_APELLIDO = Target.the("Campo apellido en lista")
             .located(By.xpath("/html/body/div/div/div/div[2]/table/tbody/tr/td[3]"));
 
+    public static Target MENSAJE_EXITO_ESTUDIANTE = Target.the("Campo apellido en lista")
+            .located(By.xpath("/html/body/div/div/div/div[3]/div/div[2]"));
 }

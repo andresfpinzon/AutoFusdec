@@ -1,9 +1,8 @@
 package co.com.AutoFusdec.questions.curso;
 
-import co.com.AutoFusdec.questions.usogeneral.MensajeExito;
+import co.com.AutoFusdec.questions.usogeneral.ValidarTexto;
 import net.serenitybdd.screenplay.Actor;
 import net.serenitybdd.screenplay.Question;
-import net.serenitybdd.screenplay.questions.Text;
 
 import static co.com.AutoFusdec.userinterface.curso.CrearCurso.MENSAJE_EXITO;
 import static jxl.biff.FormatRecord.logger;
@@ -18,7 +17,7 @@ public class ValidacionCrearCurso implements Question<Boolean> {
     public Boolean answeredBy(Actor actor) {
         try {
             String texto = "Curso creado correctamente";
-            boolean confirmacion = MensajeExito.seVe(MENSAJE_EXITO, texto).answeredBy(actor);
+            boolean confirmacion = ValidarTexto.en(MENSAJE_EXITO, texto).answeredBy(actor);
             if (confirmacion){
                 return true;
             }else {

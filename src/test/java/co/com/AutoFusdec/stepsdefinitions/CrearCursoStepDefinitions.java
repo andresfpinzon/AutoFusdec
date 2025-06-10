@@ -21,8 +21,8 @@ public class CrearCursoStepDefinitions {
 
     }
 
-    @Entonces("^se debe verificar que el usuario se cree correctamente y se agregue a la lista de usuarios\\.$")
-    public void seDebeVerificarQueElUsuarioSeCreeCorrectamenteYSeAgregueALaListaDeUsuarios() {
+    @Entonces("^se debe verificar que el curso se cree correctamente y se agregue a la lista de cursos\\.$")
+    public void seDebeVerificarQueElCursoSeCreeCorrectamenteYSeAgregueALaListaDeCursos() {
         theActorInTheSpotlight().should(seeThat(ValidacionCrearCurso.validacionCrearCurso()));
     }
 

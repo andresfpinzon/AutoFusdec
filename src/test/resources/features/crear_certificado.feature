@@ -15,5 +15,5 @@ Característica: Crear un certificado en la página de gestión de certificados 
   Escenario: Verificar el registro exitoso de un nuevo certificado
     Cuando este en la pagina de certificados y seleccione correctamente todos los campos:
       | estudianteId         | horasCompletadas | fechaEmision |
-      | ana lópez - 20000001 | 80 Horas         | 30/05/2025   |
+      | ana lopez - 20000001 | 80 Horas         | 30/05/2025   |
     Entonces se debe verificar que el certificado se cree correctamente
