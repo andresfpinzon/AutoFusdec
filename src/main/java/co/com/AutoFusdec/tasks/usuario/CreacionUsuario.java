@@ -7,7 +7,10 @@ import co.com.AutoFusdec.tasks.usogeneral.PaginacionInicial;
 import net.serenitybdd.core.steps.Instrumented;
 import net.serenitybdd.screenplay.Actor;
 import net.serenitybdd.screenplay.Task;
-import net.serenitybdd.screenplay.actions.*;
+import net.serenitybdd.screenplay.actions.Click;
+import net.serenitybdd.screenplay.actions.DoubleClick;
+import net.serenitybdd.screenplay.actions.Enter;
+import net.serenitybdd.screenplay.actions.Scroll;
 import net.serenitybdd.screenplay.waits.WaitUntil;
 
 import java.util.List;
@@ -32,8 +35,9 @@ public class CreacionUsuario implements Task {
     @Override
     public <T extends Actor> void performAs(T actor) {
         String documento = usuario.get(0).getNumeroDocumento() + NumeroAleatorio.generarNumeroAleatorio();
+        String nombre = usuario.get(0).getNombre();
+        String apellido = usuario.get(0).getApellido();
         String correo = usuario.get(0).getCorreo() + NumeroAleatorio.generarNumeroAleatorio();
-
 
         actor.attemptsTo(
                 WaitUntil.the(BTN_MENU, isVisible()).forNoMoreThan(10).seconds(),
@@ -55,13 +59,14 @@ public class CreacionUsuario implements Task {
                 Click.on(BTN_ROL),
                 Click.on(BTN_ELECCION),
                 DoubleClick.on(BTN_ROL),
+                Scroll.to(BTN_ROL),
                 Click.on(BTN_CREAR)
 
         );
 
         theActorInTheSpotlight().remember(SessionVariables.DocumentoUsuario.toString(), documento);
-        theActorInTheSpotlight().remember(SessionVariables.NombreUsuario.toString(), usuario.get(0).getNombre());
-        theActorInTheSpotlight().remember(SessionVariables.ApellidoUsuario.toString(), usuario.get(0).getApellido());
+        theActorInTheSpotlight().remember(SessionVariables.NombreUsuario.toString(), nombre);
+        theActorInTheSpotlight().remember(SessionVariables.ApellidoUsuario.toString(), apellido);
         theActorInTheSpotlight().remember(SessionVariables.CorreoUsuario.toString(), correo);
 
     }

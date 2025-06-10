@@ -32,7 +32,7 @@ public class ValidacionCrearUsuario implements Question<Boolean> {
             boolean confirmacion = MensajeExito.seVe(CrearUsuario.MENSAJE_EXITO, texto).answeredBy(actor);
 
             actor.attemptsTo(
-                    LlenarFiltro.con(BUSQUEDA_USUARIOS, nombre)
+                    LlenarFiltro.con(BUSQUEDA_USUARIOS, documento)
             );
 
             boolean documentoValido = ValidarDatosRegistro.en(ELEMENTO_LISTA_DOCUMENTO, documento).answeredBy(actor);
