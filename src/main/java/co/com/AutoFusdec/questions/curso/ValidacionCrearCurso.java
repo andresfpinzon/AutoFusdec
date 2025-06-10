@@ -50,13 +50,6 @@ public class ValidacionCrearCurso implements Question<Boolean> {
                 return false;
             }
 
-
-            // aquí
-
-
-
-
-
         } catch (Exception e) {
             logger.info(" No encontró el texto o hubo otro error");
             return false;
