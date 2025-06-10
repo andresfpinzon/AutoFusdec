@@ -8,4 +8,12 @@ public enum SessionVariables {
 
     NombreCurso,
 
+    DocumentoUsuario,
+
+    NombreUsuario,
+
+    ApellidoUsuario,
+
+    CorreoUsuario,
+
 }
