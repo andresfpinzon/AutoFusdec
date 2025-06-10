@@ -25,7 +25,7 @@ public class CrearEdicion extends PageObject {
             .located(By.xpath("//*[@id=\"root\"]/div/div/form/div[6]/button"));
 
     public static Target MENSAJE_EXITO = Target.the("Boton de crear")
-            .located(By.xpath("//div[contains(@class,'MuiAlert-message') and text()='Usuario creado correctamente con sus roles']"));
+            .located(By.xpath("//*[@id=\"root\"]/div/div/div[3]/div/div[2]"));
 
     public static Target BUSQUEDA_EDICIONES = Target.the("Barra de busqueda")
             .located(By.id("busquedaEdicion"));
