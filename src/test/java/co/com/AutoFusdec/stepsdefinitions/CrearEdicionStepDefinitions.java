@@ -1,11 +1,8 @@
 package co.com.AutoFusdec.stepsdefinitions;
 
 import co.com.AutoFusdec.models.edicion.FormularioEdicion;
-import co.com.AutoFusdec.models.usuario.FormularioUsuario;
-import co.com.AutoFusdec.questions.usuario.ValidacionCrearUsuario;
+import co.com.AutoFusdec.questions.edicion.ValidacionCrearEdicion;
 import co.com.AutoFusdec.tasks.edicion.CreacionEdicion;
-import co.com.AutoFusdec.tasks.usuario.CreacionUsuario;
-import cucumber.api.PendingException;
 import cucumber.api.java.es.Cuando;
 import cucumber.api.java.es.Entonces;
 
@@ -24,7 +21,7 @@ public class CrearEdicionStepDefinitions {
 
     @Entonces("^se debe verificar que la edicion se cree correctamente y se agregue a la lista de ediciones\\.$")
     public void seDebeVerificarQueLaEdicionSeCreeCorrectamenteYSeAgregueALaListaDeEdiciones() {
-        throw new PendingException();
+        theActorInTheSpotlight().should(seeThat(ValidacionCrearEdicion.validacionCrearEdicion()));
     }
 
 }
