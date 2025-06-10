@@ -30,7 +30,12 @@ public class MensajeExito implements Question<Boolean> {
         try {
             String texto = Text.of(mensajeExito).viewedBy(actor).asString();
             String mensaje = dato ;
-            return mensaje.equals(texto);
+            if (mensaje.equals(texto)){
+                return true;
+            }else {
+                return false;
+            }
+            
         } catch (Exception e) {
             logger.info(" No encontró el texto o hubo otro error");
             return false;
