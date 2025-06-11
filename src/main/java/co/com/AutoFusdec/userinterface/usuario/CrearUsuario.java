@@ -30,4 +30,24 @@ public class CrearUsuario extends PageObject {
     public static Target MENSAJE_EXITO = Target.the("Boton de crear")
             .located(By.xpath("//div[contains(@class,'MuiAlert-message') and text()='Usuario creado correctamente con sus roles']"));
 
+    public static Target BUSQUEDA_USUARIOS = Target.the("Barra de busqueda")
+            .located(By.id("busquedaUsuario"));
+
+    public static Target ELEMENTO_LISTA_DOCUMENTO = Target.the("Campo documento en lista")
+            .located(org.openqa.selenium.By.xpath("//*[@id=\"root\"]/div/div/div[2]/table/tbody/tr/td[1]"));
+
+
+    public static Target ELEMENTO_LISTA_NOMBRE = Target.the("Campo nombre en lista")
+            .located(org.openqa.selenium.By.xpath("//*[@id=\"root\"]/div/div/div[2]/table/tbody/tr/td[2]"));
+
+
+    public static Target ELEMENTO_LISTA_APELLIDO = Target.the("Campo apellido en lista")
+            .located(org.openqa.selenium.By.xpath("//*[@id=\"root\"]/div/div/div[2]/table/tbody/tr/td[3]"));
+
+
+    public static Target ELEMENTO_LISTA_CORREO = Target.the("Campo correo en lista")
+            .located(org.openqa.selenium.By.xpath("//*[@id=\"root\"]/div/div/div[2]/table/tbody/tr/td[4]"));
+
+    public static Target PAGINACION_USUARIO = Target.the("paginacion de usuarios")
+            .located(By.id("paginacionUsuario"));
 }
