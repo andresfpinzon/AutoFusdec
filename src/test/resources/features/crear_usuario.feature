@@ -20,5 +20,5 @@ Característica: Crear un usuario en la página de gestión de usuarios del sist
       | <numeroDocumento> | <nombre> | <apellido> | <correo> | <password> |
     Entonces se debe verificar que el usuario se cree correctamente y se agregue a la lista de usuarios.
   Ejemplos:
-  | numeroDocumento | nombre |apellido |      correo      |  password  |
-  |   1030666555    | andres | pinzon  | Andres@gmail.com | Andres123 |
+    | numeroDocumento | nombre | apellido | correo           | password  |
+    | 1030666555      | Andres | Pinzon   | andres@gmail.com | andres123 |

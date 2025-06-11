@@ -20,5 +20,5 @@ Característica: Crear un curso en la página de gestión de cursos del sistema 
       | <nombre> | <descripcion> | <intensidadHoraria> |
     Entonces se debe verificar que el curso se cree correctamente y se agregue a la lista de cursos.
   Ejemplos:
-    |   nombre    |      descripcion      | intensidadHoraria |
-    | CursoPrueba | descripcion de prueba |      120 horas    |
+    | nombre      | descripcion           | intensidadHoraria |
+    | cursoprueba | descripcion de prueba | 120 horas         |
