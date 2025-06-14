@@ -1,5 +1,9 @@
 package co.com.AutoFusdec.questions.unidad;
 
+import co.com.AutoFusdec.models.usogeneral.SessionVariables;
+import co.com.AutoFusdec.questions.usogeneral.ValidarTexto;
+import co.com.AutoFusdec.tasks.usogeneral.LimpiarFiltro;
+import co.com.AutoFusdec.tasks.usogeneral.LlenarFiltro;
 import net.serenitybdd.screenplay.Actor;
 import net.serenitybdd.screenplay.Question;
 import net.serenitybdd.screenplay.questions.Text;
@@ -7,6 +11,7 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
 import static co.com.AutoFusdec.userinterface.unidad.UnidadAccionUI.*;
+import static jxl.biff.FormatRecord.logger;
 
 public class ValidacionCrearUnidad implements Question<Boolean> {
     private static final Logger LOGGER = LoggerFactory.getLogger(ValidacionCrearUnidad.class);
@@ -18,26 +23,32 @@ public class ValidacionCrearUnidad implements Question<Boolean> {
     @Override
     public Boolean answeredBy(Actor actor) {
         try {
-            // Validar mensaje de éxito
-            String mensajeExito = Text.of(MESSAGE_SUCCESFULLY_UNIDAD)
-                    .viewedBy(actor)
-                    .asString()
-                    .trim();
+            String validacion = actor.recall(SessionVariables.NombreUnidad.toString());
 
-            boolean mensajeExitoValido = mensajeExito.contains("Unidad creada correctamente");
+            actor.attemptsTo(
+                    LlenarFiltro.con(INPUT_SEARCH_UNIDAD, validacion)
+            );
 
-            // Validar nombre de unidad en tabla
-            String nombreUnidad = Text.of(TXT_VALIDATION_UNIDAD)
-                    .viewedBy(actor)
-                    .asString()
-                    .trim();
+            boolean validacionConfirmada = ValidarTexto.en(TXT_VALIDATION_UNIDAD, validacion).answeredBy(actor);
 
-            boolean nombreUnidadValido = nombreUnidad.contains("unidad doña juana 1");
 
-            LOGGER.info("Validaciones - Mensaje éxito: {}, Nombre unidad: {}",
-                    mensajeExito, nombreUnidad);
+            if (validacionConfirmada) {
+                logger.info("El nombre de la unidad se ingreso correctamente");
+            } else {
+                logger.error("El nombre de la unidad no se ingreso correctamente");
+            }
 
-            return mensajeExitoValido && nombreUnidadValido;
+            actor.attemptsTo(
+                    LimpiarFiltro.con(INPUT_SEARCH_UNIDAD)
+            );
+
+
+            if (validacionConfirmada){
+                return true;
+            }else {
+                return false;
+            }
+
 
         } catch (Exception e) {
             LOGGER.error("Error en validación de creación de unidad", e);

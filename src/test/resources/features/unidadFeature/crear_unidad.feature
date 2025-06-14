@@ -14,9 +14,9 @@ Característica: Crear una Unidad en la página de unidades del sistema Fusdec
     @crearunidad
     Esquema del escenario: Crear una nueva unidad
       Cuando estoy en la página de gestión de Unidades dar click en agregar, completar campos y confirmar
-      | nombreUnidad |
-      |<nombreUnidad>|
+      | unidad |
+      |<unidad>|
       Entonces se debe verificar que la unidad se cree correctamente
       Ejemplos:
-      | nombreUnidad |
-      | unidad |
+        | unidad |
+        |unidad|
