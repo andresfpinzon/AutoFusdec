@@ -38,7 +38,7 @@ public class NamesGenerater {
             }
         }
 
-        return nombre.toString();
+        return nombre.toString().toLowerCase();
     }
 
     private static char obtenerLetraAleatoria(String letras) {
