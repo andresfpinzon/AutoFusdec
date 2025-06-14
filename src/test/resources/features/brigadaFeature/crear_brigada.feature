@@ -19,4 +19,4 @@ Característica: Crear un Brigada en la página de gestión de brigadas del sist
       Entonces se debe verificar que la brigada se creo correctamente ingresando en el buscador el nombre de la brigada
       Ejemplos:
         | nombreBrigada|ubicacionBrigada|
-        |Brigada Doña Juana|https://maps.app.goo.gl/NLQe3jj8YHQHdDUd8|
+        |brigada |https://maps.app.goo.gl/NLQe3jj8YHQHdDUd8|
