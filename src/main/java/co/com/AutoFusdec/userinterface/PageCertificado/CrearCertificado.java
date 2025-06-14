@@ -30,5 +30,8 @@ public class CrearCertificado {
     public static final Target ALERT_SUCCESS = Target.the("Alerta de éxito")
             .located(By.xpath("//*[@id=\"snackbar\"]/div/div[2]"));
 
+    public static final Target ESTUDIANTE_SELECCIONADO = Target.the("Nombre estudiante")
+            .located(By.xpath("/html/body/div[2]/div[3]/ul/li/h6"));
+
 
 }

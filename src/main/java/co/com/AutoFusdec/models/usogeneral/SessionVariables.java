@@ -5,7 +5,11 @@ public enum SessionVariables {
     ApellidoEstudiante,
     NombreComando,
     NumeroDocumento,
-
-
-
+    TituloEdicion,
+    NombreCurso,
+    DocumentoUsuario,
+    NombreUsuario,
+    ApellidoUsuario,
+    CorreoUsuario,
+    
 }

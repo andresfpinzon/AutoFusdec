@@ -2,6 +2,8 @@ package co.com.AutoFusdec.tasks.curso;
 
 import co.com.AutoFusdec.models.curso.FormularioCurso;
 import co.com.AutoFusdec.models.usogeneral.NumeroAleatorio;
+import co.com.AutoFusdec.models.usogeneral.SessionVariables;
+import co.com.AutoFusdec.tasks.usogeneral.PaginacionInicial;
 import net.serenitybdd.core.steps.Instrumented;
 import net.serenitybdd.screenplay.Actor;
 import net.serenitybdd.screenplay.Task;
@@ -14,6 +16,7 @@ import java.util.List;
 
 import static co.com.AutoFusdec.userinterface.curso.CrearCurso.*;
 import static net.serenitybdd.screenplay.matchers.WebElementStateMatchers.isVisible;
+import static net.serenitybdd.screenplay.actors.OnStage.theActorInTheSpotlight;
 
 public class CreacionCurso implements Task {
 
@@ -36,6 +39,8 @@ public class CreacionCurso implements Task {
                 WaitUntil.the(BTN_MENU, isVisible()).forNoMoreThan(10).seconds(),
                 Click.on(BTN_MENU),
                 Click.on(BTN_CURSO),
+                WaitUntil.the(PAGINACION_CURSOS, isVisible()).forNoMoreThan(10).seconds(),
+                PaginacionInicial.conNombre("paginacion_inicial", PAGINACION_CURSOS),
                 Click.on(INPUT_NOMBRE),
                 Enter.theValue(nombre).into(INPUT_NOMBRE),
                 Click.on(INPUT_DESCRIPCION),
@@ -48,6 +53,7 @@ public class CreacionCurso implements Task {
                 Click.on(BTN_CREAR)
 
         );
+        theActorInTheSpotlight().remember(SessionVariables.NombreCurso.toString(), nombre);
     }
 
 }
