@@ -31,7 +31,7 @@ public class BrigadaForm implements Task {
     @Override
     public <T extends Actor> void performAs(T actor) {
         BrigadaModel brigada = datos.get(0);
-        String nameBrigada = brigada.getNombreBrigada() +" "+ NamesGenerater.nameGenerate().toLowerCase();
+        String nameBrigada = brigada.getNombreBrigada() +" "+ NamesGenerater.nameGenerate();
         actor.attemptsTo(
                 SeleccionarOpcionDelMenu.conOpcion(BTN_BRIGADA),
                 Esperar.forElement(POPPUP_CREAR),
@@ -42,8 +42,7 @@ public class BrigadaForm implements Task {
                 Click.on(OPTION_COMANDO),
                 Click.on(SELECT_HORARIO_COMANDO),
                 Click.on(OPTION_HORARIO),
-                Click.on(BTN_CONFIRMAR_BRIGADA),
-                Esperar.forElement(INPUT_BUSCAR_BRIGADA)
+                Click.on(BTN_CONFIRMAR_BRIGADA)
         );
         theActorInTheSpotlight().remember(SessionVariables.NombreBrigda.toString(), nameBrigada);
     }
