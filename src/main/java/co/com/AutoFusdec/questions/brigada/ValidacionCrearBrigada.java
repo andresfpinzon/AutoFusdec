@@ -24,11 +24,11 @@ public class ValidacionCrearBrigada implements Question<Boolean> {
         try {
             String validacion = actor.recall(SessionVariables.NombreBrigda.toString());
 
-/*
+
             actor.attemptsTo(
                     LlenarFiltro.con(INPUT_BUSCAR_BRIGADA, validacion)
             );
-*/
+
             boolean validacionConfirmada = ValidarTexto.en(TXT_VALIDACION, validacion).answeredBy(actor);
 
 
@@ -37,6 +37,11 @@ public class ValidacionCrearBrigada implements Question<Boolean> {
             } else {
                 logger.error("El nombre de la brigada no se ingreso correctamente");
             }
+
+            actor.attemptsTo(
+                    LimpiarFiltro.con(INPUT_BUSCAR_BRIGADA)
+            );
+
 
             if (validacionConfirmada){
                 return true;
