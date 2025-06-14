@@ -11,5 +11,6 @@ public enum SessionVariables {
     NombreUsuario,
     ApellidoUsuario,
     CorreoUsuario,
+    NombreBrigda,
     
 }
