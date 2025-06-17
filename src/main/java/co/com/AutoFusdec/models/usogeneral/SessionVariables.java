@@ -6,6 +6,8 @@ public enum SessionVariables {
     NombreComando,
     NumeroDocumento,
 
+    NombreColegio,
+    CorreoColegio
 
 
 }
