@@ -1,9 +1,8 @@
 package co.com.AutoFusdec.questions.usuario;
 
 import co.com.AutoFusdec.models.usogeneral.SessionVariables;
-import co.com.AutoFusdec.questions.usogeneral.MensajeExito;
+import co.com.AutoFusdec.questions.usogeneral.ValidarTexto;
 import co.com.AutoFusdec.questions.usogeneral.RegistroCreado;
-import co.com.AutoFusdec.questions.usogeneral.ValidarDatosRegistro;
 import co.com.AutoFusdec.tasks.usogeneral.LimpiarFiltro;
 import co.com.AutoFusdec.tasks.usogeneral.LlenarFiltro;
 import co.com.AutoFusdec.userinterface.usuario.CrearUsuario;
@@ -29,13 +28,13 @@ public class ValidacionCrearUsuario implements Question<Boolean> {
             String correo = actor.recall(SessionVariables.CorreoUsuario.toString());
 
 
-            boolean confirmacion = MensajeExito.seVe(CrearUsuario.MENSAJE_EXITO, texto).answeredBy(actor);
+            boolean confirmacion = ValidarTexto.en(CrearUsuario.MENSAJE_EXITO, texto).answeredBy(actor);
 
             actor.attemptsTo(
                     LlenarFiltro.con(BUSQUEDA_USUARIOS, documento)
             );
 
-            boolean documentoValido = ValidarDatosRegistro.en(ELEMENTO_LISTA_DOCUMENTO, documento).answeredBy(actor);
+            boolean documentoValido = ValidarTexto.en(ELEMENTO_LISTA_DOCUMENTO, documento).answeredBy(actor);
 
             if (documentoValido) {
                 logger.info("El documento del usuario se ingreso correctamente");
@@ -43,7 +42,7 @@ public class ValidacionCrearUsuario implements Question<Boolean> {
                 logger.error("El documento del usuario no se ingreso correctamente");
             }
 
-            boolean nombreValido = ValidarDatosRegistro.en(ELEMENTO_LISTA_NOMBRE, nombre).answeredBy(actor);
+            boolean nombreValido = ValidarTexto.en(ELEMENTO_LISTA_NOMBRE, nombre).answeredBy(actor);
 
             if (nombreValido) {
                 logger.info("El nombre del usuario se ingreso correctamente");
@@ -51,7 +50,7 @@ public class ValidacionCrearUsuario implements Question<Boolean> {
                 logger.error("El nombre del usuario no se ingreso correctamente");
             }
 
-            boolean apellidoValido = ValidarDatosRegistro.en(ELEMENTO_LISTA_APELLIDO, apellido).answeredBy(actor);
+            boolean apellidoValido = ValidarTexto.en(ELEMENTO_LISTA_APELLIDO, apellido).answeredBy(actor);
 
             if (apellidoValido) {
                 logger.info("El apellido del usuario se ingreso correctamente");
@@ -59,7 +58,7 @@ public class ValidacionCrearUsuario implements Question<Boolean> {
                 logger.error("El apellido del usuario no se ingreso correctamente");
             }
 
-            boolean correoValido = ValidarDatosRegistro.en(ELEMENTO_LISTA_CORREO, correo).answeredBy(actor);
+            boolean correoValido = ValidarTexto.en(ELEMENTO_LISTA_CORREO, correo).answeredBy(actor);
 
             if (correoValido) {
                 logger.info("El correo del usuario se ingreso correctamente");

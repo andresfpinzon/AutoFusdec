@@ -2,7 +2,7 @@ package co.com.AutoFusdec.questions.colegio;
 
 import co.com.AutoFusdec.models.usogeneral.SessionVariables;
 import co.com.AutoFusdec.questions.usogeneral.RegistroCreado;
-import co.com.AutoFusdec.questions.usogeneral.ValidarDatosRegistro;
+import co.com.AutoFusdec.questions.usogeneral.ValidarTexto;
 import co.com.AutoFusdec.tasks.usogeneral.LimpiarFiltro;
 import co.com.AutoFusdec.tasks.usogeneral.LlenarFiltro;
 import net.serenitybdd.screenplay.Actor;
@@ -33,7 +33,7 @@ public class ValidacionCrearColegio implements Question<Boolean> {
 
                     LlenarFiltro.con(IN_BUSCAR_COLEGIO, filtro1)
             );
-            boolean nombreColegioValido = ValidarDatosRegistro.en(LISTA_NOMBRE_COLEGIO, filtro1).answeredBy(actor);
+            boolean nombreColegioValido = ValidarTexto.en(LISTA_NOMBRE_COLEGIO, filtro1).answeredBy(actor);
 
             if (nombreColegioValido) {
                 logger.info("El nombre se ingreso correctamente");
