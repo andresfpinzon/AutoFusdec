@@ -42,7 +42,8 @@ public class BrigadaForm implements Task {
                 Click.on(OPTION_COMANDO),
                 Click.on(SELECT_HORARIO_COMANDO),
                 Click.on(OPTION_HORARIO),
-                Click.on(BTN_CONFIRMAR_BRIGADA)
+                Click.on(BTN_CONFIRMAR_BRIGADA),
+                Esperar.forSeconds(5)
         );
         theActorInTheSpotlight().remember(SessionVariables.NombreBrigda.toString(), nameBrigada);
     }

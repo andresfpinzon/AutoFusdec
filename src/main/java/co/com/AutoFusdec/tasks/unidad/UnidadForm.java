@@ -44,7 +44,9 @@ public class UnidadForm implements Task{
                 Click.on(OPTION_BRIGADA),
                 Click.on(SELECT_USER),
                 Click.on(OPTION_USER),
-                Click.on(BTN_CONFIRMAR_UNIDAD)
+                Click.on(BTN_CONFIRMAR_UNIDAD),
+                Esperar.forSeconds(6)
+
         );
         theActorInTheSpotlight().remember(SessionVariables.NombreUnidad.toString(), nombreUnidad);
     }

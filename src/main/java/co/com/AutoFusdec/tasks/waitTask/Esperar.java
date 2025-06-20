@@ -27,10 +27,20 @@ public class Esperar implements Task {
     public Esperar forNoMoreThan(int seconds){
         return new Esperar(this.target, seconds);
     }
+    public static Esperar forSeconds(int seconds) { return new Esperar(null, seconds); }
+
 
     @Override
-    public <T extends Actor> void performAs(T actor){
-                WaitUntil.the(target,isVisible()).forNoMoreThan(seconds).seconds();
+    public <T extends Actor> void performAs(T actor) {
+        if (target != null) {
+            WaitUntil.the(target, isVisible()).forNoMoreThan(seconds).seconds();
+        } else {
+            try {
+                Thread.sleep(seconds * 1000L);
+            } catch (InterruptedException e) {
+                Thread.currentThread().interrupt();
+            }
+        }
     }
 
 }

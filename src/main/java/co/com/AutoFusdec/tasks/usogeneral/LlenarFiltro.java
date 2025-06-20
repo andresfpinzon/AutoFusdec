@@ -1,6 +1,7 @@
 package co.com.AutoFusdec.tasks.usogeneral;
 
 
+import co.com.AutoFusdec.tasks.waitTask.Esperar;
 import net.serenitybdd.core.steps.Instrumented;
 import net.serenitybdd.screenplay.Actor;
 import net.serenitybdd.screenplay.Task;
@@ -28,6 +29,7 @@ public class LlenarFiltro implements Task {
     public <T extends Actor> void performAs(T actor) {
 
         actor.attemptsTo(
+                Esperar.forElement(campoFiltro),
                 Click.on(campoFiltro),
                 Enter.theValue(datoFiltro).into(campoFiltro)
         );
