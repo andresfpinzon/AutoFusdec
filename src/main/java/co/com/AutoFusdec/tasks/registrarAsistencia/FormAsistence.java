@@ -1,5 +1,6 @@
 package co.com.AutoFusdec.tasks.registrarAsistencia;
 
+import co.com.AutoFusdec.tasks.waitTask.Esperar;
 import net.serenitybdd.core.steps.Instrumented;
 import net.serenitybdd.screenplay.Actor;
 import net.serenitybdd.screenplay.Task;
@@ -27,7 +28,8 @@ public class FormAsistence implements Task {
                 Click.on(BTN_GUARDAR_ASISTENCIA),
                 Click.on(BTN_HISTORIAL),
                 Click.on(BTN_DETALLES_HISTORIAL),
-                Enter.theValue(numeroDocumento).into(INPUT_IDENTIFICACION_VALIDACION)
+                Enter.theValue(numeroDocumento).into(INPUT_IDENTIFICACION_VALIDACION),
+                Esperar.forSeconds(4)
 
         );
     }

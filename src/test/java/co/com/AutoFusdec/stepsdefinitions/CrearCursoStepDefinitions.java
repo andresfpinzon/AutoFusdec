@@ -14,16 +14,14 @@ import static net.serenitybdd.screenplay.actors.OnStage.theActorInTheSpotlight;
 
 public class CrearCursoStepDefinitions {
 
-    /*@Cuando("^este en la pagina de cursos diligenciar correctamente el formulario y dar clic a crear curso:$")
+    @Cuando("^este en la pagina de cursos diligenciar correctamente el formulario y dar clic a crear curso:$")
     public void esteEnLaPaginaDeCursosDiligenciarCorrectamenteElFormularioYDarClicACrearCurso(List<FormularioCurso> curso) {
-
         theActorInTheSpotlight().attemptsTo(CreacionCurso.aute(curso));
-
     }
 
     @Entonces("^se debe verificar que el curso se cree correctamente y se agregue a la lista de cursos\\.$")
     public void seDebeVerificarQueElCursoSeCreeCorrectamenteYSeAgregueALaListaDeCursos() {
         theActorInTheSpotlight().should(seeThat(ValidacionCrearCurso.validacionCrearCurso()));
-    }*/
+    }
 
 }

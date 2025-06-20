@@ -1,6 +1,7 @@
 package co.com.AutoFusdec.tasks.certificado;
 
 import co.com.AutoFusdec.models.certificado.CertificadoModel;
+import co.com.AutoFusdec.tasks.waitTask.Esperar;
 import net.serenitybdd.screenplay.Actor;
 import net.serenitybdd.screenplay.Task;
 import net.serenitybdd.screenplay.actions.Click;
@@ -60,7 +61,9 @@ public class CreacionCertificado implements Task {
                 Click.on(BTN_GENERAR),
 
                 // validación de éxito
-                WaitUntil.the(ALERT_SUCCESS, isVisible()).forNoMoreThan(10).seconds()
+                WaitUntil.the(ALERT_SUCCESS, isVisible()).forNoMoreThan(10).seconds(),
+                Esperar.forSeconds(4)
+
 
         );
     }

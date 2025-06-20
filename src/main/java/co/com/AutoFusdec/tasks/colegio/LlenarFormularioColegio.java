@@ -38,7 +38,8 @@ public class LlenarFormularioColegio implements Task {
                 Enter.theValue(nombreColegio).into(IN_NOMBRE_COLEGIO),
                 Click.on(IN_EMAIL_COLEGIO),
                 Enter.theValue(correoColegio).into(IN_EMAIL_COLEGIO),
-                Click.on(BTN_CREAR_COLEGIO)
+                Click.on(BTN_CREAR_COLEGIO),
+                Esperar.forSeconds(4)
                 );
                 theActorInTheSpotlight().remember(SessionVariables.NombreColegio.toString(),nombreColegio);
                 theActorInTheSpotlight().remember(SessionVariables.CorreoColegio.toString(),correoColegio);

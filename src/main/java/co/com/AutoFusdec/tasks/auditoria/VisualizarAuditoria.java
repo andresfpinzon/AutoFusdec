@@ -1,6 +1,7 @@
 package co.com.AutoFusdec.tasks.auditoria;
 
 import co.com.AutoFusdec.models.auditoria.AuditoriaModel;
+import co.com.AutoFusdec.tasks.waitTask.Esperar;
 import net.serenitybdd.screenplay.Actor;
 import net.serenitybdd.screenplay.Task;
 import net.serenitybdd.screenplay.actions.Click;
@@ -37,7 +38,8 @@ public class VisualizarAuditoria implements Task {
 
                 Click.on(BTN_INFO_AUDITORIA),
 
-                WaitUntil.the(By.xpath(DETALLES_AUDITORIA), isVisible()).forNoMoreThan(10).seconds()
+                WaitUntil.the(By.xpath(DETALLES_AUDITORIA), isVisible()).forNoMoreThan(10).seconds(),
+                Esperar.forSeconds(4)
         );
     }
 }

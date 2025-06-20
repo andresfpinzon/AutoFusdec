@@ -44,7 +44,8 @@ public class LlenarFormularioComando implements Task {
                 Click.on(FUNDACION),
                 Click.on(OPCION_FUNDACION),
                 Scroll.to(FUNDACION),
-                Click.on(BTN_ENVIAR_COMANDO)
+                Click.on(BTN_ENVIAR_COMANDO),
+                Esperar.forSeconds(4)
         );
 
         theActorInTheSpotlight().remember(SessionVariables.NombreComando.toString(),nombre);

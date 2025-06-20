@@ -4,6 +4,7 @@ import co.com.AutoFusdec.models.usogeneral.NumeroAleatorio;
 import co.com.AutoFusdec.models.usogeneral.SessionVariables;
 import co.com.AutoFusdec.models.usuario.FormularioUsuario;
 import co.com.AutoFusdec.tasks.usogeneral.PaginacionInicial;
+import co.com.AutoFusdec.tasks.waitTask.Esperar;
 import net.serenitybdd.core.steps.Instrumented;
 import net.serenitybdd.screenplay.Actor;
 import net.serenitybdd.screenplay.Task;
@@ -60,7 +61,8 @@ public class CreacionUsuario implements Task {
                 Click.on(BTN_ELECCION),
                 DoubleClick.on(BTN_ROL),
                 Scroll.to(BTN_ROL),
-                Click.on(BTN_CREAR)
+                Click.on(BTN_CREAR),
+                Esperar.forSeconds(4)
 
         );
 

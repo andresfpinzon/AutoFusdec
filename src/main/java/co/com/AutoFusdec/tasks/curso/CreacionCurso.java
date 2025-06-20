@@ -4,6 +4,7 @@ import co.com.AutoFusdec.models.curso.FormularioCurso;
 import co.com.AutoFusdec.models.usogeneral.NumeroAleatorio;
 import co.com.AutoFusdec.models.usogeneral.SessionVariables;
 import co.com.AutoFusdec.tasks.usogeneral.PaginacionInicial;
+import co.com.AutoFusdec.tasks.waitTask.Esperar;
 import net.serenitybdd.core.steps.Instrumented;
 import net.serenitybdd.screenplay.Actor;
 import net.serenitybdd.screenplay.Task;
@@ -50,7 +51,8 @@ public class CreacionCurso implements Task {
                 Scroll.to(INPUT_INTENSIDAD),
                 Click.on(BTN_FUNDACION),
                 Click.on(BTN_ELECCION),
-                Click.on(BTN_CREAR)
+                Click.on(BTN_CREAR),
+                Esperar.forSeconds(4)
 
         );
         theActorInTheSpotlight().remember(SessionVariables.NombreCurso.toString(), nombre);
