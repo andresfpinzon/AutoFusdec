@@ -13,4 +13,6 @@ public class AutenticacionFusdec extends PageObject {
     public static Target MENU_PRINCIPAL = Target.the("Menu Principal")
             .located(By.id("menuButtonLateral"));
 
+    public static Target BTN_CONTINUAR = Target.the("Menu Principal")
+            .located(By.id("continue"));
 }

@@ -3,7 +3,7 @@ package co.com.AutoFusdec.stepsdefinitions;
 import co.com.AutoFusdec.models.autenticacion.AutenticacionModel;
 import co.com.AutoFusdec.questions.login.ValidacionLogin;
 import co.com.AutoFusdec.tasks.AbrirPaginaFusdec;
-import co.com.AutoFusdec.tasks.brigada.autenticacion.AutenticacionTask;
+import co.com.AutoFusdec.tasks.autenticacion.AutenticacionTask;
 import cucumber.api.java.es.Cuando;
 import cucumber.api.java.es.Dado;
 import cucumber.api.java.es.Entonces;
