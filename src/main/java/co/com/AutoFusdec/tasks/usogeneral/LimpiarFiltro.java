@@ -21,7 +21,6 @@ public class LimpiarFiltro implements Task {
 
     @Override
     public <T extends Actor> void performAs(T actor) {
-        String datoFiltro = actor.recall("datoFiltro");
         actor.attemptsTo(
                 Click.on(campoFiltro),
                 Enter.theValue("").into(campoFiltro)

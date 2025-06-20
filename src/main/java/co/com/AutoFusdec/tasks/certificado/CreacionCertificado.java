@@ -39,6 +39,7 @@ public class CreacionCertificado implements Task {
                 Scroll.to(DROPDOWN_ESTUDIANTE),
                 Click.on(DROPDOWN_ESTUDIANTE),
                 WaitUntil.the(OPCION_ESTUDIANTE, isVisible()).forNoMoreThan(10).seconds(),
+                GuardarTextoCertificado.de("nombre_certificado", ESTUDIANTE_SELECCIONADO),
                 Click.on(OPCION_ESTUDIANTE),
 
                 // Select DE HORAS COMPLETADAS
@@ -51,7 +52,6 @@ public class CreacionCertificado implements Task {
                 // FECHA DE EMISION
                 WaitUntil.the(DROPDOWN_FECHA, isVisible()).forNoMoreThan(10).seconds(),
                 Scroll.to(DROPDOWN_FECHA),
-                Click.on(DROPDOWN_FECHA),
                 Enter.theValue(certificados.get(0).getFechaEmision()).into(DROPDOWN_FECHA),
 
                 // Generar certificado

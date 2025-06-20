@@ -7,20 +7,20 @@ import net.serenitybdd.screenplay.targets.Target;
 
 import static jxl.biff.FormatRecord.logger;
 
-public class ValidarDatosRegistro implements Question<Boolean> {
+public class ValidarTexto implements Question<Boolean> {
 
     private final Target elementoLista;
 
     private final String datoFiltro;
 
-    public ValidarDatosRegistro(Target elementoLista, String datoFiltro) {
+    public ValidarTexto(Target elementoLista, String datoFiltro) {
 
         this.elementoLista = elementoLista;
         this.datoFiltro = datoFiltro;
     }
 
-    public static ValidarDatosRegistro en(Target elementoLista, String datoFiltro) {
-        return new ValidarDatosRegistro(elementoLista, datoFiltro);
+    public static ValidarTexto en(Target elementoLista, String datoFiltro) {
+        return new ValidarTexto(elementoLista, datoFiltro);
     }
 
     @Override
